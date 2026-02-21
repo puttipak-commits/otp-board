@@ -616,10 +616,21 @@ function buildCard(item) {
   // ถ้ามี virtru_link แสดงปุ่ม Unlock Message
   if (item.virtru_link && item.virtru_link !== 'VIRTRU_LINK_NOT_FOUND') {
     const invoiceNum = (item.subject.match(/\d{10,}/) || [''])[0];
-    codeSection = `
-      <a class="unlock-btn" href="${item.virtru_link}" target="_blank" rel="noopener">
-        🔓 Unlock Message${invoiceNum ? ' — ' + invoiceNum : ''}
-      </a>`;
+    let validRange = '';
+    if (item.valid_until) {
+      const from = new Date(item.received_at);
+      const to = new Date(item.valid_until);
+      const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+      const fmt = d => String(d.getDate()).padStart(2,'0') + '-' + months[d.getMonth()] + '-' + d.getFullYear();
+      const isExpired = to < new Date();
+      validRange = \`<div style="font-size:11px;color:\${isExpired?'#c0392b':'#0D7D4D'};margin:4px 16px 0;font-family:'IBM Plex Mono',monospace;">
+        📅 Valid: \${fmt(from)} → \${fmt(to)}\${isExpired?' (Expired)':' ✓'}
+      </div>\`;
+    }
+    codeSection = \`
+      <a class="unlock-btn" href="\${item.virtru_link}" target="_blank" rel="noopener">
+        🔓 Unlock Message\${invoiceNum ? ' — ' + invoiceNum : ''}
+      </a>\${validRange}\`;
   } else if (item.virtru_link === 'VIRTRU_LINK_NOT_FOUND') {
     codeSection = `<div class="no-code-section">⚠️ ไม่พบ Unlock Link — กรุณาเปิดอีเมลโดยตรง</div>`;
   } else if (hasCode) {
@@ -798,9 +809,10 @@ async function loadData() {
     return new Date(b.received_at) - new Date(a.received_at);
   });
 
-  // เก็บแค่ OTP ล่าสุดของแต่ละระบบ (อย่างน้อย 1 อันต่อระบบเสมอ)
+  // เก็บแค่ OTP ล่าสุดของแต่ละระบบ (ยกเว้น no_dedup items)
   const seen = new Set();
   allData = allData.filter(item => {
+    if (item.virtru_link) return true; // Eli Lilly แสดงทุก invoice
     const key = item.system_name;
     if (seen.has(key)) return false;
     seen.add(key);
