@@ -940,18 +940,19 @@ async function submitFeedback() {
     const token = ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('');
     const apiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`;
 
-    // ดึง feedback เดิม
-    const res = await fetch(apiUrl, { headers: { 'Authorization': 'token ' + token } });
+    // ดึง feedback เดิม (ถ้าไม่มีไฟล์ก็เริ่มใหม่)
     let existing = [];
     let sha = null;
-    if (res.ok) {
-      const d = await res.json();
-      sha = d.sha;
-      try {
+    try {
+      const res = await fetch(apiUrl, { headers: { 'Authorization': 'token ' + token } });
+      if (res.ok) {
+        const d = await res.json();
+        sha = d.sha;
         const decoded = new TextDecoder().decode(Uint8Array.from(atob(d.content.replace(/\n/g,'')), c => c.charCodeAt(0)));
         existing = JSON.parse(decoded);
-      } catch(e) { existing = []; }
-    }
+      }
+      // ถ้า 404 = ไฟล์ยังไม่มี เริ่ม array ใหม่เลย
+    } catch(e) { existing = []; }
     existing.push(feedback);
 
     const jsonStr = JSON.stringify(existing, null, 2);
