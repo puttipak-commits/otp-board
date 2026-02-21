@@ -650,7 +650,7 @@ function buildCard(item) {
       <div class="card-footer">
         <div class="meta-item">
           <div class="meta-label">ส่งถึง</div>
-          <div class="meta-value" title="${toClean}">${({'rutorn':'Rutorn','suphattra':'Suphattra','nopakun':'Nopakun'}[toClean.split('@')[0].toLowerCase()] || toClean.split('@')[0])}</div>
+          <div class="meta-value" title="${toClean}">${({'rutorn':'Rutorn','suphattra':'Suphattra','nopakun':'Rutorn'}[toClean.split('@')[0].toLowerCase()] || toClean.split('@')[0])}</div>
         </div>
         <div class="meta-item">
           <div class="meta-label">รับเมื่อ</div>
