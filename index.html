@@ -621,9 +621,10 @@ function buildCard(item) {
   let codeSection = '';
 
   // ถ้ามี virtru_link แสดงปุ่ม Unlock Message
+  let isExpired = false;
   if (item.virtru_link && item.virtru_link !== 'VIRTRU_LINK_NOT_FOUND') {
     const invoiceNum = (item.subject.match(/\d{10,}/) || [''])[0];
-    const isExpired = item.valid_until ? new Date(item.valid_until) < new Date() : false;
+    isExpired = item.valid_until ? new Date(item.valid_until) < new Date() : false;
     let validRange = '';
     if (item.valid_until) {
       const fromD = new Date(item.received_at);
