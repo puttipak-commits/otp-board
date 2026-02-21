@@ -931,7 +931,7 @@ async function submitFeedback() {
   try {
     // helper: encode UTF-8 to base64 (safe for Thai)
     const toB64 = str => btoa(unescape(encodeURIComponent(str)));
-    const fromB64 = str => decodeURIComponent(escape(atob(str.replace(/\n/g,''))));
+    const fromB64 = str => { const b=atob(str.replace(/\n/g,'')); return decodeURIComponent(b.split('').map(c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); };
 
     const token = ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('');
     const apiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`;
