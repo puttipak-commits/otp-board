@@ -736,6 +736,18 @@ async function loadData() {
     allData = DEMO_DATA;
     console.warn('Using demo data:', e.message);
   }
+  // เรียงล่าสุดก่อน
+  allData.sort((a, b) => new Date(b.received_at) - new Date(a.received_at));
+
+  // กรองซ้ำ — เก็บแค่ OTP ล่าสุดของแต่ละระบบ (system_name)
+  const seen = new Set();
+  allData = allData.filter(item => {
+    const key = item.system_name;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
   document.getElementById('stat-updated').textContent = new Date().toLocaleTimeString('th-TH');
   document.getElementById('refresh-label').textContent = 'LIVE';
   renderCards();
