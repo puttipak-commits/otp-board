@@ -941,7 +941,7 @@ async function submitFeedback() {
     existing.push(feedback);
 
     // upload กลับขึ้น GitHub
-    const body = { message: `feedback: ${user}`, content: btoa(unescape(encodeURIComponent(JSON.stringify(existing, null, 2)))) };
+    const body = { message: `feedback: ${user}`, content: btoa(String.fromCharCode(...new TextEncoder().encode(JSON.stringify(existing, null, 2)))) };
     if (sha) body.sha = sha;
 
     const up = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`, {
