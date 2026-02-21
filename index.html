@@ -761,11 +761,13 @@ function renderCards() {
 
   grid.innerHTML = filtered.map(buildCard).join('');
 
-  // Update stats
-  const total = allData.filter(i => i.otp_code).length;
-  const active = allData.filter(i => i.otp_code && getExpiryState(i).state !== 'expired').length;
+  // Update stats (รวม virtru_link cards ด้วย)
+  const total = allData.filter(i => i.otp_code || i.virtru_link).length;
+  const virtruActive = allData.filter(i => i.virtru_link && (!i.valid_until || new Date(i.valid_until) >= new Date())).length;
+  const virtruExpiredCount = allData.filter(i => i.virtru_link && i.valid_until && new Date(i.valid_until) < new Date()).length;
+  const active = allData.filter(i => i.otp_code && getExpiryState(i).state !== 'expired').length + virtruActive;
   const expiring = allData.filter(i => i.otp_code && getExpiryState(i).state === 'urgent').length;
-  const expired = allData.filter(i => i.otp_code && getExpiryState(i).state === 'expired').length;
+  const expired = allData.filter(i => i.otp_code && getExpiryState(i).state === 'expired').length + virtruExpiredCount;
   document.getElementById('stat-total').textContent = total;
   document.getElementById('stat-active').textContent = active;
   document.getElementById('stat-expiring').textContent = expiring;
