@@ -422,6 +422,13 @@
   .page-footer .credit { font-family: 'Sarabun', sans-serif; }
   .page-footer .copyright { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B8973A; letter-spacing: -1px; font-size: 12px; }
 
+
+  .fb-checks { display:flex;flex-wrap:wrap;gap:8px; }
+  .fb-check { display:flex;align-items:center;gap:6px;background:#f0f3fa;padding:6px 12px;border-radius:20px;cursor:pointer;font-size:13px;border:1.5px solid transparent;transition:all 0.15s; }
+  .fb-check:hover { border-color:#1B3A6B; }
+  .fb-check input[type=checkbox] { width:14px;height:14px;accent-color:#1B3A6B; }
+  .fb-btn { background:#B8973A;color:#fff;border:none;padding:8px 16px;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:0.5px;transition:background 0.2s; }
+  .fb-btn:hover { background:#9a7c2e; }
 </style>
 </head>
 <body>
@@ -863,6 +870,238 @@ window.addEventListener('DOMContentLoaded', () => {
   loadData();
 });
 
+
+// ===== FEEDBACK FUNCTIONS =====
+const GITHUB_REPO = 'puttipak-commits/otp-board';
+
+function openFeedback() {
+  const overlay = document.getElementById('fb-overlay');
+  overlay.style.display = 'flex';
+  document.getElementById('fb-form-view').style.display = 'block';
+  document.getElementById('fb-success-view').style.display = 'none';
+  document.getElementById('fb-error').style.display = 'none';
+}
+
+function closeFeedback() {
+  document.getElementById('fb-overlay').style.display = 'none';
+  // reset form
+  document.getElementById('fb-user').value = '';
+  document.querySelectorAll('#fb-overlay input[type=checkbox]').forEach(c => c.checked = false);
+  document.getElementById('fb-note').value = '';
+}
+
+async function submitFeedback() {
+  const user = document.getElementById('fb-user').value;
+  const systems = [...document.querySelectorAll('input[name=sys]:checked')].map(c => c.value);
+  const problems = [...document.querySelectorAll('input[name=prob]:checked')].map(c => c.value);
+  const note = document.getElementById('fb-note').value.trim();
+  const errEl = document.getElementById('fb-error');
+
+  if (!user) { errEl.textContent = '⚠️ กรุณาเลือกชื่อผู้ใช้'; errEl.style.display = 'block'; return; }
+  if (!systems.length) { errEl.textContent = '⚠️ กรุณาเลือกระบบที่มีปัญหา'; errEl.style.display = 'block'; return; }
+  if (!problems.length) { errEl.textContent = '⚠️ กรุณาเลือกประเภทปัญหา'; errEl.style.display = 'block'; return; }
+  errEl.style.display = 'none';
+
+  const btn = document.querySelector('#fb-form-view button');
+  btn.textContent = '⏳ กำลังส่ง...';
+  btn.disabled = true;
+
+  const feedback = {
+    id: Date.now().toString(),
+    user, systems, problems, note,
+    submitted_at: new Date().toISOString()
+  };
+
+  try {
+    // ดึง feedback เดิมจาก GitHub
+    const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`);
+    let existing = [];
+    let sha = null;
+    if (res.ok) {
+      const d = await res.json();
+      sha = d.sha;
+      existing = JSON.parse(atob(d.content.replace(/\n/g,'')));
+    }
+    existing.push(feedback);
+
+    // upload กลับขึ้น GitHub
+    const body = { message: `feedback: ${user}`, content: btoa(unescape(encodeURIComponent(JSON.stringify(existing, null, 2)))) };
+    if (sha) body.sha = sha;
+
+    const up = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'token ' + ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('') },
+      body: JSON.stringify(body)
+    });
+
+    if (up.ok) {
+      document.getElementById('fb-form-view').style.display = 'none';
+      document.getElementById('fb-success-view').style.display = 'block';
+    } else {
+      throw new Error('Upload failed');
+    }
+  } catch(e) {
+    btn.textContent = '📤 SUBMIT FEEDBACK';
+    btn.disabled = false;
+    errEl.textContent = '❌ ส่งไม่สำเร็จ กรุณาลองใหม่ครับ';
+    errEl.style.display = 'block';
+  }
+}
+
+async function openFeedbackView() {
+  const overlay = document.getElementById('fb-view-overlay');
+  overlay.style.display = 'flex';
+  const container = document.getElementById('fb-table-container');
+  container.innerHTML = '<div style="color:#666;font-size:13px;">กำลังโหลด...</div>';
+
+  try {
+    const res = await fetch(`https://raw.githubusercontent.com/${GITHUB_REPO}/main/feedback.json?t=${Date.now()}`);
+    if (!res.ok) { container.innerHTML = '<div style="color:#666;">ยังไม่มี Feedback ครับ</div>'; return; }
+    const data = await res.json();
+    if (!data.length) { container.innerHTML = '<div style="color:#666;">ยังไม่มี Feedback ครับ</div>'; return; }
+
+    // Summary
+    const userCount = {};
+    const sysCount = {};
+    const probCount = {};
+    data.forEach(fb => {
+      userCount[fb.user] = (userCount[fb.user]||0)+1;
+      fb.systems.forEach(s => sysCount[s] = (sysCount[s]||0)+1);
+      fb.problems.forEach(p => probCount[p] = (probCount[p]||0)+1);
+    });
+
+    const topSys = Object.entries(sysCount).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([k,v])=>`${k} (${v})`).join(', ');
+    const topProb = Object.entries(probCount).sort((a,b)=>b[1]-a[1]).slice(0,2).map(([k,v])=>`${k} (${v})`).join(', ');
+
+    let tableRows = data.slice().reverse().map(fb => {
+      const dt = new Date(fb.submitted_at);
+      const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+      const dateStr = String(dt.getDate()).padStart(2,'0') + '-' + months[dt.getMonth()] + '-' + dt.getFullYear() + ' ' + String(dt.getHours()).padStart(2,'0') + ':' + String(dt.getMinutes()).padStart(2,'0');
+      return `<tr style="border-bottom:1px solid #f0f3fa;">
+        <td style="padding:10px 8px;font-size:13px;font-weight:600;">${fb.user}</td>
+        <td style="padding:10px 8px;font-size:12px;">${fb.systems.join('<br>')}</td>
+        <td style="padding:10px 8px;font-size:12px;">${fb.problems.join('<br>')}</td>
+        <td style="padding:10px 8px;font-size:12px;color:#666;">${fb.note||'-'}</td>
+        <td style="padding:10px 8px;font-size:11px;color:#999;white-space:nowrap;">${dateStr}</td>
+      </tr>`;
+    }).join('');
+
+    container.innerHTML = `
+      <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
+        <div style="background:#f0f3fa;border-radius:10px;padding:12px 16px;flex:1;min-width:120px;">
+          <div style="font-size:24px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">${data.length}</div>
+          <div style="font-size:11px;color:#666;">Feedback ทั้งหมด</div>
+        </div>
+        <div style="background:#f0f3fa;border-radius:10px;padding:12px 16px;flex:2;min-width:200px;">
+          <div style="font-size:11px;font-weight:600;color:#666;margin-bottom:4px;">ระบบที่มีปัญหาบ่อย</div>
+          <div style="font-size:12px;">${topSys||'-'}</div>
+        </div>
+        <div style="background:#f0f3fa;border-radius:10px;padding:12px 16px;flex:2;min-width:200px;">
+          <div style="font-size:11px;font-weight:600;color:#666;margin-bottom:4px;">ปัญหาที่พบบ่อย</div>
+          <div style="font-size:12px;">${topProb||'-'}</div>
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="background:#f0f3fa;font-size:11px;font-weight:600;color:#666;">
+              <th style="padding:10px 8px;text-align:left;">ผู้ใช้</th>
+              <th style="padding:10px 8px;text-align:left;">ระบบ</th>
+              <th style="padding:10px 8px;text-align:left;">ปัญหา</th>
+              <th style="padding:10px 8px;text-align:left;">หมายเหตุ</th>
+              <th style="padding:10px 8px;text-align:left;">เวลา</th>
+            </tr>
+          </thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+      </div>`;
+  } catch(e) {
+    container.innerHTML = '<div style="color:#c0392b;">โหลดไม่ได้ครับ</div>';
+  }
+}
+
 </script>
+
+<!-- ===== FEEDBACK MODAL ===== -->
+<div id="fb-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:16px;width:90%;max-width:520px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <!-- Header -->
+    <div style="background:#1B3A6B;color:#fff;padding:20px 24px;border-radius:16px 16px 0 0;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;">📋 แบบฟอร์ม Feedback</div>
+        <div style="font-size:11px;opacity:0.75;margin-top:2px;">ขอความร่วมมือภายใน 08-Mar-2026 นี้ครับ</div>
+      </div>
+      <button onclick="closeFeedback()" style="background:none;border:none;color:#fff;font-size:20px;cursor:pointer;opacity:0.8;">✕</button>
+    </div>
+    <!-- Form -->
+    <div style="padding:24px;" id="fb-form-view">
+      <div style="margin-bottom:16px;">
+        <label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:6px;">👤 ชื่อผู้ใช้ <span style="color:red">*</span></label>
+        <select id="fb-user" style="width:100%;padding:10px 12px;border:1.5px solid #dde3f0;border-radius:8px;font-family:'Sarabun',sans-serif;font-size:14px;background:#fff;">
+          <option value="">— เลือกชื่อ —</option>
+          <option value="Apiwatt">Apiwatt</option>
+<option value="Orrawan">Orrawan</option>
+<option value="Rutorn">Rutorn</option>
+<option value="Monrudee">Monrudee</option>
+<option value="Suphattra">Suphattra</option>
+<option value="Trademarkinvoice">Trademarkinvoice</option>
+<option value="Patent-DN">Patent-DN</option>
+<option value="Sirinporn">Sirinporn</option>
+<option value="Yuwadee">Yuwadee</option>
+<option value="Puntina">Puntina</option>
+<option value="Nipa">Nipa</option>
+        </select>
+      </div>
+      <div style="margin-bottom:16px;">
+        <label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:8px;">🖥️ ระบบที่มีปัญหา <span style="color:red">*</span></label>
+        <div class="fb-checks"><label class="fb-check"><input type="checkbox" name="sys" value="ASCENT (DOE Legal)"><span>ASCENT (DOE Legal)</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="CounselLink (LexisNexis)"><span>CounselLink (LexisNexis)</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="CounselGO"><span>CounselGO</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="Billing Point (Onit)"><span>Billing Point (Onit)</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="Anaqua (IBM)"><span>Anaqua (IBM)</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="Brightflag"><span>Brightflag</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="Nestlé Invoice Management"><span>Nestlé Invoice Management</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="Eli Lilly (Remittance)"><span>Eli Lilly (Remittance)</span></label></div>
+      </div>
+      <div style="margin-bottom:16px;">
+        <label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:8px;">⚠️ ประเภทปัญหา <span style="color:red">*</span></label>
+        <div class="fb-checks"><label class="fb-check"><input type="checkbox" name="prob" value="ข้อมูลขึ้น card ช้าเกินไป"><span>ข้อมูลขึ้น card ช้าเกินไป</span></label>
+<label class="fb-check"><input type="checkbox" name="prob" value="ไม่ปรากฏข้อมูลที่ card"><span>ไม่ปรากฏข้อมูลที่ card</span></label>
+<label class="fb-check"><input type="checkbox" name="prob" value="คัดลอก OTP ไม่ได้"><span>คัดลอก OTP ไม่ได้</span></label>
+<label class="fb-check"><input type="checkbox" name="prob" value="OTP หมดอายุเร็วเกินไป"><span>OTP หมดอายุเร็วเกินไป</span></label>
+<label class="fb-check"><input type="checkbox" name="prob" value="ข้อมูลไม่อัปเดต"><span>ข้อมูลไม่อัปเดต</span></label>
+<label class="fb-check"><input type="checkbox" name="prob" value="อื่นๆ"><span>อื่นๆ</span></label></div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:6px;">📝 หมายเหตุเพิ่มเติม</label>
+        <textarea id="fb-note" rows="3" placeholder="รายละเอียดเพิ่มเติม (ถ้ามี)" style="width:100%;padding:10px 12px;border:1.5px solid #dde3f0;border-radius:8px;font-family:'Sarabun',sans-serif;font-size:14px;resize:vertical;box-sizing:border-box;"></textarea>
+      </div>
+      <div id="fb-error" style="color:#c0392b;font-size:12px;margin-bottom:12px;display:none;"></div>
+      <button onclick="submitFeedback()" style="width:100%;background:#1B3A6B;color:#fff;border:none;padding:13px;border-radius:10px;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:0.5px;">
+        📤 SUBMIT FEEDBACK
+      </button>
+    </div>
+    <!-- Success -->
+    <div style="padding:40px 24px;text-align:center;display:none;" id="fb-success-view">
+      <div style="font-size:48px;margin-bottom:12px;">✅</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:#0D7D4D;margin-bottom:8px;">ส่งแจ้งแผนก IT เรียบร้อยแล้ว</div>
+      <div style="font-size:13px;color:#666;margin-bottom:24px;">ขอบคุณสำหรับ Feedback ครับ ทีม IT จะดำเนินการตรวจสอบ</div>
+      <button onclick="closeFeedback()" style="background:#1B3A6B;color:#fff;border:none;padding:10px 28px;border-radius:8px;font-family:'Sarabun',sans-serif;font-size:14px;cursor:pointer;">ปิด</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEEDBACK VIEW MODAL -->
+<div id="fb-view-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:16px;width:95%;max-width:700px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <div style="background:#1B3A6B;color:#fff;padding:20px 24px;border-radius:16px 16px 0 0;display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;">📊 Feedback ทั้งหมด</div>
+      <button onclick="document.getElementById('fb-view-overlay').style.display='none'" style="background:none;border:none;color:#fff;font-size:20px;cursor:pointer;">✕</button>
+    </div>
+    <div style="padding:20px;" id="fb-table-container">
+      <div style="font-size:13px;color:#666;">กำลังโหลด...</div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
