@@ -336,6 +336,12 @@
     border: none;
   }
   .unlock-btn:hover { background: #be123c; }
+  .unlock-btn.disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+  }
 
   /* NO CODE */
   .no-code-section {
@@ -604,7 +610,8 @@ function buildCard(item) {
   else if (state === 'urgent') { statusLabel = 'URGENT'; statusClass = 'warning'; }
   else { statusLabel = 'ACTIVE'; statusClass = 'active'; }
 
-  const cardClass = ['otp-card', expired ? 'expired' : '', !hasCode ? 'no-code' : ''].join(' ').trim();
+  const virtruExpired = item.virtru_link && item.valid_until && new Date(item.valid_until) < new Date();
+  const cardClass = ['otp-card', expired ? 'expired' : '', virtruExpired ? 'expired' : '', !hasCode && !item.virtru_link ? 'no-code' : ''].join(' ').trim();
 
   // ดึงเฉพาะ email address จาก "Name <email@domain.com>"
   const fromMatch = item.from_email.match(/<([^>]+)>/);
@@ -628,8 +635,11 @@ function buildCard(item) {
       validRange = '<div style="font-size:11px;color:' + color + ';margin:4px 16px 0;font-family:IBM Plex Mono,monospace;">' +
         '📅 Valid: ' + fmt(fromD) + ' → ' + fmt(toD) + status + '</div>';
     }
-    codeSection = '<a class="unlock-btn" href="' + item.virtru_link + '" target="_blank" rel="noopener">' +
-      '🔓 Unlock Message' + (invoiceNum ? ' — ' + invoiceNum : '') +
+    const btnClass = isExpired ? 'unlock-btn disabled' : 'unlock-btn';
+    const btnIcon = isExpired ? '🔒' : '🔓';
+    const btnAttr = isExpired ? '' : 'href="' + item.virtru_link + '" target="_blank" rel="noopener"';
+    codeSection = '<a class="' + btnClass + '" ' + btnAttr + '>' +
+      btnIcon + ' Unlock Message' + (invoiceNum ? ' — ' + invoiceNum : '') +
       '</a>' + validRange;
   } else if (item.virtru_link === 'VIRTRU_LINK_NOT_FOUND') {
     codeSection = `<div class="no-code-section">⚠️ ไม่พบ Unlock Link — กรุณาเปิดอีเมลโดยตรง</div>`;
@@ -801,11 +811,15 @@ async function loadData() {
     allData = DEMO_DATA;
     console.warn('Using demo data:', e.message);
   }
-  // เรียง ACTIVE ก่อน แล้วเรียงล่าสุด
+  // เรียง: Active OTP → Active Virtru → Expired Virtru → Expired OTP
   allData.sort((a, b) => {
-    const aExp = getExpiryState(a).state === 'expired' ? 1 : 0;
-    const bExp = getExpiryState(b).state === 'expired' ? 1 : 0;
-    if (aExp !== bExp) return aExp - bExp;
+    const aVirtruExp = a.virtru_link && a.valid_until && new Date(a.valid_until) < new Date() ? 1 : 0;
+    const bVirtruExp = b.virtru_link && b.valid_until && new Date(b.valid_until) < new Date() ? 1 : 0;
+    const aOtpExp = getExpiryState(a).state === 'expired' ? 1 : 0;
+    const bOtpExp = getExpiryState(b).state === 'expired' ? 1 : 0;
+    const aScore = aVirtruExp * 2 + aOtpExp;
+    const bScore = bVirtruExp * 2 + bOtpExp;
+    if (aScore !== bScore) return aScore - bScore;
     return new Date(b.received_at) - new Date(a.received_at);
   });
 
