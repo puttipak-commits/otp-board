@@ -954,19 +954,29 @@ async function submitFeedback() {
     const body = { message: 'feedback: ' + user, content: toB64(jsonStr) };
     if (sha) body.sha = sha;
 
-    const up = await fetch(apiUrl, {
+    fetch(apiUrl, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'token ' + token },
       body: JSON.stringify(body)
+    }).then(up => {
+      if (up.ok || up.status === 201 || up.status === 200) {
+        document.getElementById('fb-form-view').style.display = 'none';
+        document.getElementById('fb-success-view').style.display = 'block';
+      } else {
+        btn.textContent = '📤 SUBMIT FEEDBACK';
+        btn.disabled = false;
+        errEl.textContent = '❌ ส่งไม่สำเร็จ (HTTP ' + up.status + ')';
+        errEl.style.display = 'block';
+      }
+    }).catch(e => {
+      btn.textContent = '📤 SUBMIT FEEDBACK';
+      btn.disabled = false;
+      errEl.textContent = '❌ Network error: ' + e.message;
+      errEl.style.display = 'block';
     });
-
-    if (up.ok) {
-      document.getElementById('fb-form-view').style.display = 'none';
-      document.getElementById('fb-success-view').style.display = 'block';
-    } else {
-      const err = await up.json();
-      throw new Error(err.message || 'Upload failed');
-    }
+    // แสดง success ทันที (optimistic UI)
+    document.getElementById('fb-form-view').style.display = 'none';
+    document.getElementById('fb-success-view').style.display = 'block';
   } catch(e) {
     btn.textContent = '📤 SUBMIT FEEDBACK';
     btn.disabled = false;
