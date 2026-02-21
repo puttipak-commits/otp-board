@@ -7,13 +7,14 @@
     "received_at": "2026-02-20T09:30:24+00:00",
     "otp_code": "193233",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "10 minutes",
     "expiry_minutes": 10,
     "expires_at": "2026-02-20T09:40:24+00:00",
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-02-21T19:12:13.579728+00:00"
+    "parsed_at": "2026-02-21T19:34:15.899500+00:00"
   },
   {
     "id": "4",
@@ -23,13 +24,14 @@
     "received_at": "2026-02-20T08:47:14+00:00",
     "otp_code": "515087",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-21T19:12:13.470666+00:00"
+    "parsed_at": "2026-02-21T19:34:15.791880+00:00"
   },
   {
     "id": "3",
@@ -39,13 +41,14 @@
     "received_at": "2026-02-20T04:14:27+00:00",
     "otp_code": "728743",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-21T19:12:13.462627+00:00"
+    "parsed_at": "2026-02-21T19:34:15.783914+00:00"
   },
   {
     "id": "13",
@@ -55,13 +58,14 @@
     "received_at": "2026-02-20T04:05:25+00:00",
     "otp_code": "143310",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "30 minutes",
     "expiry_minutes": 30,
     "expires_at": "2026-02-20T04:35:25+00:00",
     "system_name": "ASCENT (DOE Legal)",
     "system_url": "http://ascent.doelegal.com",
     "color": "#1a56db",
-    "parsed_at": "2026-02-21T19:12:13.571528+00:00"
+    "parsed_at": "2026-02-21T19:34:15.891613+00:00"
   },
   {
     "id": "12",
@@ -71,13 +75,14 @@
     "received_at": "2026-02-19T09:00:52+00:00",
     "otp_code": "946091",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "30 minutes",
     "expiry_minutes": 30,
     "expires_at": "2026-02-19T09:30:52+00:00",
     "system_name": "ASCENT (DOE Legal)",
     "system_url": "http://ascent.doelegal.com",
     "color": "#1a56db",
-    "parsed_at": "2026-02-21T19:12:13.555815+00:00"
+    "parsed_at": "2026-02-21T19:34:15.876083+00:00"
   },
   {
     "id": "16",
@@ -87,13 +92,14 @@
     "received_at": "2026-02-19T08:48:31+00:00",
     "otp_code": "356591",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-02-21T19:12:13.593990+00:00"
+    "parsed_at": "2026-02-21T19:34:15.913186+00:00"
   },
   {
     "id": "11",
@@ -103,13 +109,14 @@
     "received_at": "2026-02-19T08:29:25+00:00",
     "otp_code": "144367",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "10 minutes",
     "expiry_minutes": 10,
     "expires_at": "2026-02-19T08:39:25+00:00",
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-02-21T19:12:13.540139+00:00"
+    "parsed_at": "2026-02-21T19:34:15.860099+00:00"
   },
   {
     "id": "10",
@@ -119,13 +126,14 @@
     "received_at": "2026-02-18T08:25:01+00:00",
     "otp_code": "438312",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "15 minutes",
     "expiry_minutes": 15,
     "expires_at": "2026-02-18T08:40:01+00:00",
     "system_name": "Brightflag",
     "system_url": "https://brightflag.com",
     "color": "#059669",
-    "parsed_at": "2026-02-21T19:12:13.531735+00:00"
+    "parsed_at": "2026-02-21T19:34:15.851783+00:00"
   },
   {
     "id": "15",
@@ -135,13 +143,14 @@
     "received_at": "2026-02-18T03:48:28+00:00",
     "otp_code": "669628",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-02-21T19:12:13.587032+00:00"
+    "parsed_at": "2026-02-21T19:34:15.906478+00:00"
   },
   {
     "id": "2",
@@ -151,13 +160,14 @@
     "received_at": "2026-02-05T06:38:06+00:00",
     "otp_code": "557333",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-02-21T19:12:13.453776+00:00"
+    "parsed_at": "2026-02-21T19:34:15.775801+00:00"
   },
   {
     "id": "1",
@@ -167,13 +177,14 @@
     "received_at": "2026-02-03T07:00:07+00:00",
     "otp_code": "379182",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-02-21T19:12:13.447326+00:00"
+    "parsed_at": "2026-02-21T19:34:15.769259+00:00"
   },
   {
     "id": "9",
@@ -183,13 +194,14 @@
     "received_at": "2026-01-02T19:52:40+00:00",
     "otp_code": null,
     "virtru_link": "https://jpmchase.secure.virtru.com/start/?c=experiment&t=emailtemplate2019-09&s=Remit_Advice%40jpmchase.com&p=06b5f51c-cb14-45b9-b90b-5aacc1716c39#v=3.0.0&d=https%3A%2F%2Fapi.virtru.com%2Fstorage%2Fapi%2Fpolicies%2F06b5f51c-cb14-45b9-b90b-5aacc1716c39%2Fdata%2Fmetadata&dk=Y86G4Xvajrm1Jl5JAJ5tYkDy6GS5cNbPWTtwIJl1zIQ%3D",
+    "valid_until": "2026-02-01T19:52:40+00:00",
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Eli Lilly (Remittance)",
     "system_url": "",
     "color": "#e11d48",
-    "parsed_at": "2026-02-21T19:12:13.523806+00:00"
+    "parsed_at": "2026-02-21T19:34:15.844039+00:00"
   },
   {
     "id": "8",
@@ -199,13 +211,14 @@
     "received_at": "2025-12-17T06:34:17+00:00",
     "otp_code": "510172",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "15 minutes",
     "expiry_minutes": 15,
     "expires_at": "2025-12-17T06:49:17+00:00",
     "system_name": "Brightflag",
     "system_url": "https://brightflag.com",
     "color": "#059669",
-    "parsed_at": "2026-02-21T19:12:13.510662+00:00"
+    "parsed_at": "2026-02-21T19:34:15.830484+00:00"
   },
   {
     "id": "7",
@@ -215,13 +228,14 @@
     "received_at": "2025-12-15T16:28:32+00:00",
     "otp_code": null,
     "virtru_link": "https://jpmchase.secure.virtru.com/start/?c=experiment&t=emailtemplate2019-09&s=Remit_Advice%40jpmchase.com&p=99d56ed2-1f19-4803-9061-3866f97361f0#v=3.0.0&d=https%3A%2F%2Fapi.virtru.com%2Fstorage%2Fapi%2Fpolicies%2F99d56ed2-1f19-4803-9061-3866f97361f0%2Fdata%2Fmetadata&dk=qeRngc%2FodwhU27aOcte1NfBX809kMixVWib9c72YAXc%3D",
+    "valid_until": "2026-01-14T16:28:32+00:00",
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Eli Lilly (Remittance)",
     "system_url": "",
     "color": "#e11d48",
-    "parsed_at": "2026-02-21T19:12:13.501899+00:00"
+    "parsed_at": "2026-02-21T19:34:15.822239+00:00"
   },
   {
     "id": "6",
@@ -231,13 +245,14 @@
     "received_at": "2025-11-28T06:38:21+00:00",
     "otp_code": "264593",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "CounselGO",
     "system_url": "https://counselgo.com",
     "color": "#0e7490",
-    "parsed_at": "2026-02-21T19:12:13.483523+00:00"
+    "parsed_at": "2026-02-21T19:34:15.804087+00:00"
   },
   {
     "id": "5",
@@ -247,12 +262,13 @@
     "received_at": "2025-11-27T04:06:54+00:00",
     "otp_code": "354703",
     "virtru_link": null,
+    "valid_until": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "CounselGO",
     "system_url": "https://counselgo.com",
     "color": "#0e7490",
-    "parsed_at": "2026-02-21T19:12:13.477169+00:00"
+    "parsed_at": "2026-02-21T19:34:15.798282+00:00"
   }
 ]
