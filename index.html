@@ -929,24 +929,38 @@ async function submitFeedback() {
   };
 
   try {
-    // ดึง feedback เดิมจาก GitHub
-    const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`);
+    // helper: encode UTF-8 JSON to base64
+    const toB64 = str => {
+      const bytes = new TextEncoder().encode(str);
+      let bin = '';
+      bytes.forEach(b => bin += String.fromCharCode(b));
+      return btoa(bin);
+    };
+
+    const token = ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('');
+    const apiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`;
+
+    // ดึง feedback เดิม
+    const res = await fetch(apiUrl, { headers: { 'Authorization': 'token ' + token } });
     let existing = [];
     let sha = null;
     if (res.ok) {
       const d = await res.json();
       sha = d.sha;
-      existing = JSON.parse(atob(d.content.replace(/\n/g,'')));
+      try {
+        const decoded = new TextDecoder().decode(Uint8Array.from(atob(d.content.replace(/\n/g,'')), c => c.charCodeAt(0)));
+        existing = JSON.parse(decoded);
+      } catch(e) { existing = []; }
     }
     existing.push(feedback);
 
-    // upload กลับขึ้น GitHub
-    const body = { message: `feedback: ${user}`, content: btoa(encodeURIComponent(JSON.stringify(existing, null, 2)).replace(/%([0-9A-F]{2})/g, (m,p)=>String.fromCharCode('0x'+p))) };
+    const jsonStr = JSON.stringify(existing, null, 2);
+    const body = { message: 'feedback: ' + user, content: toB64(jsonStr) };
     if (sha) body.sha = sha;
 
-    const up = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`, {
+    const up = await fetch(apiUrl, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'token ' + ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('') },
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'token ' + token },
       body: JSON.stringify(body)
     });
 
@@ -954,12 +968,13 @@ async function submitFeedback() {
       document.getElementById('fb-form-view').style.display = 'none';
       document.getElementById('fb-success-view').style.display = 'block';
     } else {
-      throw new Error('Upload failed');
+      const err = await up.json();
+      throw new Error(err.message || 'Upload failed');
     }
   } catch(e) {
     btn.textContent = '📤 SUBMIT FEEDBACK';
     btn.disabled = false;
-    errEl.textContent = '❌ ส่งไม่สำเร็จ กรุณาลองใหม่ครับ';
+    errEl.textContent = '❌ ส่งไม่สำเร็จ: ' + e.message;
     errEl.style.display = 'block';
   }
 }
