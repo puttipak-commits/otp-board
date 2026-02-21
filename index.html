@@ -757,10 +757,15 @@ async function loadData() {
     allData = DEMO_DATA;
     console.warn('Using demo data:', e.message);
   }
-  // เรียงล่าสุดก่อน
-  allData.sort((a, b) => new Date(b.received_at) - new Date(a.received_at));
+  // เรียง ACTIVE ก่อน แล้วเรียงล่าสุด
+  allData.sort((a, b) => {
+    const aExp = getExpiryState(a).state === 'expired' ? 1 : 0;
+    const bExp = getExpiryState(b).state === 'expired' ? 1 : 0;
+    if (aExp !== bExp) return aExp - bExp;
+    return new Date(b.received_at) - new Date(a.received_at);
+  });
 
-  // กรองซ้ำ — เก็บแค่ OTP ล่าสุดของแต่ละระบบ (system_name)
+  // เก็บแค่ OTP ล่าสุดของแต่ละระบบ (อย่างน้อย 1 อันต่อระบบเสมอ)
   const seen = new Set();
   allData = allData.filter(item => {
     const key = item.system_name;
