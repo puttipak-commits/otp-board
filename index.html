@@ -316,6 +316,27 @@
   .countdown-time.urgent { color: var(--expired); }
   .countdown-time.expired { color: var(--expired); }
 
+  /* UNLOCK BUTTON */
+  .unlock-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #e11d48;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 14px 16px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    border: none;
+  }
+  .unlock-btn:hover { background: #be123c; }
+
   /* NO CODE */
   .no-code-section {
     display: flex;
@@ -591,7 +612,17 @@ function buildCard(item) {
   const toClean = item.to_email.replace(/["<>]/g, '').trim();
 
   let codeSection = '';
-  if (hasCode) {
+
+  // ถ้ามี virtru_link แสดงปุ่ม Unlock Message
+  if (item.virtru_link && item.virtru_link !== 'VIRTRU_LINK_NOT_FOUND') {
+    const invoiceNum = (item.subject.match(/\d{10,}/) || [''])[0];
+    codeSection = `
+      <a class="unlock-btn" href="${item.virtru_link}" target="_blank" rel="noopener">
+        🔓 Unlock Message${invoiceNum ? ' — ' + invoiceNum : ''}
+      </a>`;
+  } else if (item.virtru_link === 'VIRTRU_LINK_NOT_FOUND') {
+    codeSection = `<div class="no-code-section">⚠️ ไม่พบ Unlock Link — กรุณาเปิดอีเมลโดยตรง</div>`;
+  } else if (hasCode) {
     codeSection = `
       <div class="code-section" onclick="copyCode('${item.otp_code}', this)" title="คลิกเพื่อคัดลอก">
         <div class="otp-digits">${item.otp_code}</div>
