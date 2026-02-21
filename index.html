@@ -929,13 +929,9 @@ async function submitFeedback() {
   };
 
   try {
-    // helper: encode UTF-8 JSON to base64
-    const toB64 = str => {
-      const bytes = new TextEncoder().encode(str);
-      let bin = '';
-      bytes.forEach(b => bin += String.fromCharCode(b));
-      return btoa(bin);
-    };
+    // helper: encode UTF-8 to base64 (safe for Thai)
+    const toB64 = str => btoa(unescape(encodeURIComponent(str)));
+    const fromB64 = str => decodeURIComponent(escape(atob(str.replace(/\n/g,''))));
 
     const token = ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('');
     const apiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`;
@@ -948,8 +944,7 @@ async function submitFeedback() {
       if (res.ok) {
         const d = await res.json();
         sha = d.sha;
-        const decoded = new TextDecoder().decode(Uint8Array.from(atob(d.content.replace(/\n/g,'')), c => c.charCodeAt(0)));
-        existing = JSON.parse(decoded);
+        existing = JSON.parse(fromB64(d.content));
       }
       // ถ้า 404 = ไฟล์ยังไม่มี เริ่ม array ใหม่เลย
     } catch(e) { existing = []; }
