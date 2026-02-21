@@ -13,7 +13,7 @@
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-02-21T19:08:52.586304+00:00"
+    "parsed_at": "2026-02-21T19:12:13.579728+00:00"
   },
   {
     "id": "4",
@@ -29,7 +29,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-21T19:08:52.491773+00:00"
+    "parsed_at": "2026-02-21T19:12:13.470666+00:00"
   },
   {
     "id": "3",
@@ -45,7 +45,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-21T19:08:52.484537+00:00"
+    "parsed_at": "2026-02-21T19:12:13.462627+00:00"
   },
   {
     "id": "13",
@@ -61,7 +61,7 @@
     "system_name": "ASCENT (DOE Legal)",
     "system_url": "http://ascent.doelegal.com",
     "color": "#1a56db",
-    "parsed_at": "2026-02-21T19:08:52.578954+00:00"
+    "parsed_at": "2026-02-21T19:12:13.571528+00:00"
   },
   {
     "id": "12",
@@ -77,7 +77,7 @@
     "system_name": "ASCENT (DOE Legal)",
     "system_url": "http://ascent.doelegal.com",
     "color": "#1a56db",
-    "parsed_at": "2026-02-21T19:08:52.565128+00:00"
+    "parsed_at": "2026-02-21T19:12:13.555815+00:00"
   },
   {
     "id": "16",
@@ -93,7 +93,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-02-21T19:08:52.598598+00:00"
+    "parsed_at": "2026-02-21T19:12:13.593990+00:00"
   },
   {
     "id": "11",
@@ -109,7 +109,7 @@
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-02-21T19:08:52.551253+00:00"
+    "parsed_at": "2026-02-21T19:12:13.540139+00:00"
   },
   {
     "id": "10",
@@ -125,7 +125,7 @@
     "system_name": "Brightflag",
     "system_url": "https://brightflag.com",
     "color": "#059669",
-    "parsed_at": "2026-02-21T19:08:52.544062+00:00"
+    "parsed_at": "2026-02-21T19:12:13.531735+00:00"
   },
   {
     "id": "15",
@@ -141,7 +141,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-02-21T19:08:52.592746+00:00"
+    "parsed_at": "2026-02-21T19:12:13.587032+00:00"
   },
   {
     "id": "2",
@@ -157,7 +157,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-02-21T19:08:52.476819+00:00"
+    "parsed_at": "2026-02-21T19:12:13.453776+00:00"
   },
   {
     "id": "1",
@@ -173,7 +173,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-02-21T19:08:52.471070+00:00"
+    "parsed_at": "2026-02-21T19:12:13.447326+00:00"
   },
   {
     "id": "9",
@@ -182,14 +182,14 @@
     "subject": "Eli Lilly and Company Remittance Information - 10000026344704 - ELILILLYCO #secure#",
     "received_at": "2026-01-02T19:52:40+00:00",
     "otp_code": null,
-    "virtru_link": "VIRTRU_LINK_NOT_FOUND",
+    "virtru_link": "https://jpmchase.secure.virtru.com/start/?c=experiment&t=emailtemplate2019-09&s=Remit_Advice%40jpmchase.com&p=06b5f51c-cb14-45b9-b90b-5aacc1716c39#v=3.0.0&d=https%3A%2F%2Fapi.virtru.com%2Fstorage%2Fapi%2Fpolicies%2F06b5f51c-cb14-45b9-b90b-5aacc1716c39%2Fdata%2Fmetadata&dk=Y86G4Xvajrm1Jl5JAJ5tYkDy6GS5cNbPWTtwIJl1zIQ%3D",
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Eli Lilly (Remittance)",
     "system_url": "",
     "color": "#e11d48",
-    "parsed_at": "2026-02-21T19:08:52.537130+00:00"
+    "parsed_at": "2026-02-21T19:12:13.523806+00:00"
   },
   {
     "id": "8",
@@ -205,7 +205,7 @@
     "system_name": "Brightflag",
     "system_url": "https://brightflag.com",
     "color": "#059669",
-    "parsed_at": "2026-02-21T19:08:52.525334+00:00"
+    "parsed_at": "2026-02-21T19:12:13.510662+00:00"
   },
   {
     "id": "7",
@@ -214,14 +214,14 @@
     "subject": "Eli Lilly and Company Remittance Information - 10000026055072 - ELILILLYCO #secure#",
     "received_at": "2025-12-15T16:28:32+00:00",
     "otp_code": null,
-    "virtru_link": "VIRTRU_LINK_NOT_FOUND",
+    "virtru_link": "https://jpmchase.secure.virtru.com/start/?c=experiment&t=emailtemplate2019-09&s=Remit_Advice%40jpmchase.com&p=99d56ed2-1f19-4803-9061-3866f97361f0#v=3.0.0&d=https%3A%2F%2Fapi.virtru.com%2Fstorage%2Fapi%2Fpolicies%2F99d56ed2-1f19-4803-9061-3866f97361f0%2Fdata%2Fmetadata&dk=qeRngc%2FodwhU27aOcte1NfBX809kMixVWib9c72YAXc%3D",
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Eli Lilly (Remittance)",
     "system_url": "",
     "color": "#e11d48",
-    "parsed_at": "2026-02-21T19:08:52.517935+00:00"
+    "parsed_at": "2026-02-21T19:12:13.501899+00:00"
   },
   {
     "id": "6",
@@ -237,7 +237,7 @@
     "system_name": "CounselGO",
     "system_url": "https://counselgo.com",
     "color": "#0e7490",
-    "parsed_at": "2026-02-21T19:08:52.502208+00:00"
+    "parsed_at": "2026-02-21T19:12:13.483523+00:00"
   },
   {
     "id": "5",
@@ -253,6 +253,6 @@
     "system_name": "CounselGO",
     "system_url": "https://counselgo.com",
     "color": "#0e7490",
-    "parsed_at": "2026-02-21T19:08:52.496837+00:00"
+    "parsed_at": "2026-02-21T19:12:13.477169+00:00"
   }
 ]
