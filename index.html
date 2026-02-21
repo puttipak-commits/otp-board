@@ -78,7 +78,10 @@
   /* MAIN */
   .main { max-width: 1400px; margin: 0 auto; padding: 28px 24px; }
 
-  .page-header { display:flex; align-items:center; gap:12px; margin-bottom:6px; }
+  .page-header { display:flex; align-items:center; gap:12px; margin-bottom:6px; flex-wrap:wrap; }
+  .page-header-left { display:flex; align-items:center; gap:12px; flex:1; flex-wrap:wrap; }
+  .page-header-right { display:flex; align-items:center; gap:6px; margin-left:auto; }
+  @media (max-width:600px) { .page-header-right { width:100%; justify-content:flex-end; margin-top:8px; } }
 
   .page-title {
     font-family: 'IBM Plex Mono', monospace;
@@ -397,14 +400,21 @@
   #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   /* REFRESH LABEL */
+  @keyframes livePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+  }
   .refresh-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: 700;
     color: var(--active);
     background: var(--active-bg);
-    padding: 2px 8px;
-    border-radius: 4px;
+    padding: 3px 10px;
+    border-radius: 5px;
     margin-left: 8px;
+    animation: livePulse 1.4s ease-in-out infinite;
+    letter-spacing: 1px;
   }
 
   /* FOOTER */
@@ -444,11 +454,15 @@
 <div class="main">
 
   <div class="page-header">
-    <h2 class="page-title">OTP Codes</h2>
-    <span class="badge-secure">SECURE ACCESS</span>
-    <span class="refresh-label" id="refresh-label">LIVE</span>
-    <button class="fb-btn" onclick="openFeedback()" style="margin-left:12px;">📋 แจ้งปัญหา</button>
-    <button class="fb-btn" onclick="openFeedbackView()" style="margin-left:6px;background:#1B3A6B;">📊 ดู Feedback</button>
+    <div class="page-header-left">
+      <h2 class="page-title">OTP Codes</h2>
+      <span class="badge-secure">SECURE ACCESS</span>
+      <span class="refresh-label" id="refresh-label">LIVE</span>
+    </div>
+    <div class="page-header-right">
+      <button class="fb-btn" onclick="openFeedback()">📋 แจ้งปัญหา</button>
+      <button class="fb-btn" onclick="openFeedbackView()" style="background:#1B3A6B;">📊 Feedback</button>
+    </div>
   </div>
   <p class="page-sub">รหัส OTP สำหรับ login เข้าระบบ DN-Online ของลูกความ — อัปเดตอัตโนมัติ</p>
 
