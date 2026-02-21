@@ -585,7 +585,9 @@ function buildCard(item) {
 
   const cardClass = ['otp-card', expired ? 'expired' : '', !hasCode ? 'no-code' : ''].join(' ').trim();
 
-  const fromClean = item.from_email.replace(/<[^>]+>/g, '').trim();
+  // ดึงเฉพาะ email address จาก "Name <email@domain.com>"
+  const fromMatch = item.from_email.match(/<([^>]+)>/);
+  const fromClean = fromMatch ? fromMatch[1].trim() : item.from_email.replace(/<[^>]+>/g, '').trim();
   const toClean = item.to_email.replace(/["<>]/g, '').trim();
 
   let codeSection = '';
