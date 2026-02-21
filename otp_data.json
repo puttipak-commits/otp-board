@@ -6,13 +6,14 @@
     "subject": "CounselLink Multi-factor Authentication Verification Code",
     "received_at": "2026-02-20T09:30:24+00:00",
     "otp_code": "193233",
+    "virtru_link": null,
     "expiry_str": "10 minutes",
     "expiry_minutes": 10,
     "expires_at": "2026-02-20T09:40:24+00:00",
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-02-21T17:55:23.971558+00:00"
+    "parsed_at": "2026-02-21T18:43:04.061215+00:00"
   },
   {
     "id": "4",
@@ -21,13 +22,14 @@
     "subject": "Billing Point secure login code",
     "received_at": "2026-02-20T08:47:14+00:00",
     "otp_code": "515087",
+    "virtru_link": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-21T17:55:23.859043+00:00"
+    "parsed_at": "2026-02-21T18:43:03.952867+00:00"
   },
   {
     "id": "3",
@@ -36,13 +38,14 @@
     "subject": "Billing Point secure login code",
     "received_at": "2026-02-20T04:14:27+00:00",
     "otp_code": "728743",
+    "virtru_link": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-21T17:55:23.851317+00:00"
+    "parsed_at": "2026-02-21T18:43:03.944975+00:00"
   },
   {
     "id": "13",
@@ -51,13 +54,14 @@
     "subject": "ASCENT - Authentication Request Token 143310",
     "received_at": "2026-02-20T04:05:25+00:00",
     "otp_code": "143310",
+    "virtru_link": null,
     "expiry_str": "30 minutes",
     "expiry_minutes": 30,
     "expires_at": "2026-02-20T04:35:25+00:00",
     "system_name": "ASCENT (DOE Legal)",
     "system_url": "http://ascent.doelegal.com",
     "color": "#1a56db",
-    "parsed_at": "2026-02-21T17:55:23.963572+00:00"
+    "parsed_at": "2026-02-21T18:43:04.053169+00:00"
   },
   {
     "id": "12",
@@ -66,13 +70,14 @@
     "subject": "ASCENT - Authentication Request Token 946091",
     "received_at": "2026-02-19T09:00:52+00:00",
     "otp_code": "946091",
+    "virtru_link": null,
     "expiry_str": "30 minutes",
     "expiry_minutes": 30,
     "expires_at": "2026-02-19T09:30:52+00:00",
     "system_name": "ASCENT (DOE Legal)",
     "system_url": "http://ascent.doelegal.com",
     "color": "#1a56db",
-    "parsed_at": "2026-02-21T17:55:23.948103+00:00"
+    "parsed_at": "2026-02-21T18:43:04.037494+00:00"
   },
   {
     "id": "16",
@@ -81,13 +86,14 @@
     "subject": " OTP Verification Nestlé Invoice Management Tool",
     "received_at": "2026-02-19T08:48:31+00:00",
     "otp_code": "356591",
+    "virtru_link": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-02-21T17:55:23.987566+00:00"
+    "parsed_at": "2026-02-21T18:43:04.075137+00:00"
   },
   {
     "id": "11",
@@ -96,13 +102,14 @@
     "subject": "CounselLink Multi-factor Authentication Verification Code",
     "received_at": "2026-02-19T08:29:25+00:00",
     "otp_code": "144367",
+    "virtru_link": null,
     "expiry_str": "10 minutes",
     "expiry_minutes": 10,
     "expires_at": "2026-02-19T08:39:25+00:00",
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-02-21T17:55:23.932328+00:00"
+    "parsed_at": "2026-02-21T18:43:04.021784+00:00"
   },
   {
     "id": "10",
@@ -111,13 +118,14 @@
     "subject": "Action Needed - Email Verification - Brightflag",
     "received_at": "2026-02-18T08:25:01+00:00",
     "otp_code": "438312",
+    "virtru_link": null,
     "expiry_str": "15 minutes",
     "expiry_minutes": 15,
     "expires_at": "2026-02-18T08:40:01+00:00",
     "system_name": "Brightflag",
     "system_url": "https://brightflag.com",
     "color": "#059669",
-    "parsed_at": "2026-02-21T17:55:23.923974+00:00"
+    "parsed_at": "2026-02-21T18:43:04.013689+00:00"
   },
   {
     "id": "15",
@@ -126,13 +134,14 @@
     "subject": " OTP Verification Nestlé Invoice Management Tool",
     "received_at": "2026-02-18T03:48:28+00:00",
     "otp_code": "669628",
+    "virtru_link": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-02-21T17:55:23.980169+00:00"
+    "parsed_at": "2026-02-21T18:43:04.068406+00:00"
   },
   {
     "id": "2",
@@ -141,13 +150,14 @@
     "subject": "Anaqua Login Code",
     "received_at": "2026-02-05T06:38:06+00:00",
     "otp_code": "557333",
+    "virtru_link": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-02-21T17:55:23.843224+00:00"
+    "parsed_at": "2026-02-21T18:43:03.936780+00:00"
   },
   {
     "id": "1",
@@ -156,13 +166,30 @@
     "subject": "Anaqua Login Code",
     "received_at": "2026-02-03T07:00:07+00:00",
     "otp_code": "379182",
+    "virtru_link": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-02-21T17:55:23.836808+00:00"
+    "parsed_at": "2026-02-21T18:43:03.930513+00:00"
+  },
+  {
+    "id": "9",
+    "from_email": "Remit_Advice@jpmchase.com",
+    "to_email": "Rutorn",
+    "subject": "Eli Lilly and Company Remittance Information - 10000026344704 - ELILILLYCO #secure#",
+    "received_at": "2026-01-02T19:52:40+00:00",
+    "otp_code": null,
+    "virtru_link": "VIRTRU_LINK_NOT_FOUND",
+    "expiry_str": "ไม่ระบุ",
+    "expiry_minutes": null,
+    "expires_at": null,
+    "system_name": "Eli Lilly (Remittance)",
+    "system_url": "",
+    "color": "#e11d48",
+    "parsed_at": "2026-02-21T18:43:04.005898+00:00"
   },
   {
     "id": "8",
@@ -171,13 +198,30 @@
     "subject": "Action Needed - Email Verification - Brightflag",
     "received_at": "2025-12-17T06:34:17+00:00",
     "otp_code": "510172",
+    "virtru_link": null,
     "expiry_str": "15 minutes",
     "expiry_minutes": 15,
     "expires_at": "2025-12-17T06:49:17+00:00",
     "system_name": "Brightflag",
     "system_url": "https://brightflag.com",
     "color": "#059669",
-    "parsed_at": "2026-02-21T17:55:23.900851+00:00"
+    "parsed_at": "2026-02-21T18:43:03.992794+00:00"
+  },
+  {
+    "id": "7",
+    "from_email": "Remit_Advice@jpmchase.com",
+    "to_email": "Rutorn",
+    "subject": "Eli Lilly and Company Remittance Information - 10000026055072 - ELILILLYCO #secure#",
+    "received_at": "2025-12-15T16:28:32+00:00",
+    "otp_code": null,
+    "virtru_link": "VIRTRU_LINK_NOT_FOUND",
+    "expiry_str": "ไม่ระบุ",
+    "expiry_minutes": null,
+    "expires_at": null,
+    "system_name": "Eli Lilly (Remittance)",
+    "system_url": "",
+    "color": "#e11d48",
+    "parsed_at": "2026-02-21T18:43:03.984381+00:00"
   },
   {
     "id": "6",
@@ -186,13 +230,14 @@
     "subject": "Verify your identity in CounselGO",
     "received_at": "2025-11-28T06:38:21+00:00",
     "otp_code": "264593",
+    "virtru_link": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "CounselGO",
     "system_url": "https://counselgo.com",
     "color": "#0e7490",
-    "parsed_at": "2026-02-21T17:55:23.872322+00:00"
+    "parsed_at": "2026-02-21T18:43:03.966042+00:00"
   },
   {
     "id": "5",
@@ -201,12 +246,13 @@
     "subject": "Verify your identity in CounselGO",
     "received_at": "2025-11-27T04:06:54+00:00",
     "otp_code": "354703",
+    "virtru_link": null,
     "expiry_str": "ไม่ระบุ",
     "expiry_minutes": null,
     "expires_at": null,
     "system_name": "CounselGO",
     "system_url": "https://counselgo.com",
     "color": "#0e7490",
-    "parsed_at": "2026-02-21T17:55:23.865773+00:00"
+    "parsed_at": "2026-02-21T18:43:03.959450+00:00"
   }
 ]
