@@ -618,19 +618,19 @@ function buildCard(item) {
     const invoiceNum = (item.subject.match(/\d{10,}/) || [''])[0];
     let validRange = '';
     if (item.valid_until) {
-      const from = new Date(item.received_at);
-      const to = new Date(item.valid_until);
+      const fromD = new Date(item.received_at);
+      const toD = new Date(item.valid_until);
       const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
       const fmt = d => String(d.getDate()).padStart(2,'0') + '-' + months[d.getMonth()] + '-' + d.getFullYear();
-      const isExpired = to < new Date();
-      validRange = \`<div style="font-size:11px;color:\${isExpired?'#c0392b':'#0D7D4D'};margin:4px 16px 0;font-family:'IBM Plex Mono',monospace;">
-        📅 Valid: \${fmt(from)} → \${fmt(to)}\${isExpired?' (Expired)':' ✓'}
-      </div>\`;
+      const isExpired = toD < new Date();
+      const color = isExpired ? '#c0392b' : '#0D7D4D';
+      const status = isExpired ? ' (Expired)' : ' ✓';
+      validRange = '<div style="font-size:11px;color:' + color + ';margin:4px 16px 0;font-family:IBM Plex Mono,monospace;">' +
+        '📅 Valid: ' + fmt(fromD) + ' → ' + fmt(toD) + status + '</div>';
     }
-    codeSection = \`
-      <a class="unlock-btn" href="\${item.virtru_link}" target="_blank" rel="noopener">
-        🔓 Unlock Message\${invoiceNum ? ' — ' + invoiceNum : ''}
-      </a>\${validRange}\`;
+    codeSection = '<a class="unlock-btn" href="' + item.virtru_link + '" target="_blank" rel="noopener">' +
+      '🔓 Unlock Message' + (invoiceNum ? ' — ' + invoiceNum : '') +
+      '</a>' + validRange;
   } else if (item.virtru_link === 'VIRTRU_LINK_NOT_FOUND') {
     codeSection = `<div class="no-code-section">⚠️ ไม่พบ Unlock Link — กรุณาเปิดอีเมลโดยตรง</div>`;
   } else if (hasCode) {
