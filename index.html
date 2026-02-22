@@ -918,71 +918,28 @@ async function submitFeedback() {
   if (!problems.length) { errEl.textContent = '⚠️ กรุณาเลือกประเภทปัญหา'; errEl.style.display = 'block'; return; }
   errEl.style.display = 'none';
 
-  const btn = document.querySelector('#fb-form-view button');
-  btn.textContent = '⏳ กำลังส่ง...';
-  btn.disabled = true;
+  // แสดง success ทันที ไม่รอ network
+  document.getElementById('fb-form-view').style.display = 'none';
+  document.getElementById('fb-success-view').style.display = 'block';
 
-  const feedback = {
-    id: Date.now().toString(),
-    user, systems, problems, note,
-    submitted_at: new Date().toISOString()
-  };
+  // ส่งข้อมูล GitHub ใน background
+  const feedback = { id: Date.now().toString(), user, systems, problems, note, submitted_at: new Date().toISOString() };
+  const toB64 = s => btoa(unescape(encodeURIComponent(s)));
+  const fromB64 = s => { try { const b=atob(s.replace(/\n/g,'')); return decodeURIComponent(b.split('').map(c=>'%'+('0'+c.charCodeAt(0).toString(16)).slice(-2)).join('')); } catch(e){ return '[]'; } };
+  const token = ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('');
+  const apiUrl = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/feedback.json';
+  const hdrs = { 'Content-Type': 'application/json', 'Authorization': 'token ' + token };
 
-  try {
-    // helper: encode UTF-8 to base64 (safe for Thai)
-    const toB64 = str => btoa(unescape(encodeURIComponent(str)));
-    const fromB64 = str => { const b=atob(str.replace(/\n/g,'')); return decodeURIComponent(b.split('').map(c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join('')); };
-
-    const token = ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('');
-    const apiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/feedback.json`;
-
-    // ดึง feedback เดิม (ถ้าไม่มีไฟล์ก็เริ่มใหม่)
-    let existing = [];
-    let sha = null;
-    try {
-      const res = await fetch(apiUrl, { headers: { 'Authorization': 'token ' + token } });
-      if (res.ok) {
-        const d = await res.json();
-        sha = d.sha;
-        existing = JSON.parse(fromB64(d.content));
-      }
-      // ถ้า 404 = ไฟล์ยังไม่มี เริ่ม array ใหม่เลย
-    } catch(e) { existing = []; }
-    existing.push(feedback);
-
-    const jsonStr = JSON.stringify(existing, null, 2);
-    const body = { message: 'feedback: ' + user, content: toB64(jsonStr) };
-    if (sha) body.sha = sha;
-
-    fetch(apiUrl, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json', 'Authorization': 'token ' + token },
-      body: JSON.stringify(body)
-    }).then(up => {
-      if (up.ok || up.status === 201 || up.status === 200) {
-        document.getElementById('fb-form-view').style.display = 'none';
-        document.getElementById('fb-success-view').style.display = 'block';
-      } else {
-        btn.textContent = '📤 SUBMIT FEEDBACK';
-        btn.disabled = false;
-        errEl.textContent = '❌ ส่งไม่สำเร็จ (HTTP ' + up.status + ')';
-        errEl.style.display = 'block';
-      }
-    }).catch(e => {
-      btn.textContent = '📤 SUBMIT FEEDBACK';
-      btn.disabled = false;
-      errEl.textContent = '❌ Network error: ' + e.message;
-      errEl.style.display = 'block';
-    });
-    // แสดง success ทันที (optimistic UI)
-    document.getElementById('fb-form-view').style.display = 'none';
-    document.getElementById('fb-success-view').style.display = 'block';
-  } catch(e) {
-    btn.textContent = '📤 SUBMIT FEEDBACK';
-    btn.disabled = false;
-    errEl.textContent = '❌ ส่งไม่สำเร็จ: ' + e.message;
-    errEl.style.display = 'block';
-  }
+  fetch(apiUrl, { headers: hdrs })
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      let existing = [], sha = null;
+      if (d) { sha = d.sha; try { existing = JSON.parse(fromB64(d.content)); } catch(e){} }
+      existing.push(feedback);
+      const body = { message: 'feedback: ' + user, content: toB64(JSON.stringify(existing, null, 2)) };
+      if (sha) body.sha = sha;
+      return fetch(apiUrl, { method: 'PUT', headers: hdrs, body: JSON.stringify(body) });
+    }).catch(() => {});
 }
 
 async function openFeedbackView() {
