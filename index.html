@@ -954,7 +954,7 @@ async function openFeedbackView() {
     const timeoutId = setTimeout(() => controller.abort(), 30000); // timeout 30 วินาที
     let res;
     try {
-      res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/contents/feedback.json?ref=main&t=' + Date.now(), { headers: { 'Authorization': 'token ' + _tk, 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }, signal: controller.signal });
+      res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/contents/feedback.json?ref=main&t=' + Date.now(), { headers: { 'Authorization': 'token ' + _tk }, signal: controller.signal });
     } finally {
       clearTimeout(timeoutId);
     }
