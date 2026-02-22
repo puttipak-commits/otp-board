@@ -523,7 +523,7 @@
 // สำหรับ GitHub Pages: ใส่ URL ของ raw JSON
 // สำหรับ local: เปลี่ยนเป็น './otp_data.json'
 const DATA_URL = './otp_data.json';
-const REFRESH_INTERVAL_MS = 60000; // โหลดใหม่ทุก 1 นาที
+const REFRESH_INTERVAL_MS = 30000; // โหลดใหม่ทุก 30 วินาที
 
 // ==============================================
 
@@ -950,7 +950,14 @@ async function openFeedbackView() {
 
   try {
     const _tk = ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('');
-    const res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/contents/feedback.json?ref=main&t=' + Date.now(), { headers: { 'Authorization': 'token ' + _tk, 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' } });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000); // timeout 30 วินาที
+    let res;
+    try {
+      res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/contents/feedback.json?ref=main&t=' + Date.now(), { headers: { 'Authorization': 'token ' + _tk, 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }, signal: controller.signal });
+    } finally {
+      clearTimeout(timeoutId);
+    }
     if (!res.ok) { container.innerHTML = '<div style="color:#666;">ยังไม่มี Feedback ครับ</div>'; return; }
     const _d = await res.json();
     const _fromB64 = s => { try { const b=atob(s.replace(/\n/g,'')); return decodeURIComponent(b.split('').map(c=>'%'+('0'+c.charCodeAt(0).toString(16)).slice(-2)).join('')); } catch(e){ return '[]'; } };
@@ -1013,7 +1020,11 @@ async function openFeedbackView() {
         </table>
       </div>`;
   } catch(e) {
-    container.innerHTML = '<div style="color:#c0392b;">โหลดไม่ได้ครับ</div>';
+    if (e.name === 'AbortError') {
+      container.innerHTML = '<div style="color:#c0392b;">⏱️ หมดเวลาเชื่อมต่อ (timeout 30 วิ) — กรุณาลองใหม่ครับ</div>';
+    } else {
+      container.innerHTML = '<div style="color:#c0392b;">โหลดไม่ได้ครับ</div>';
+    }
   }
 }
 
