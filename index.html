@@ -949,14 +949,9 @@ async function openFeedbackView() {
   container.innerHTML = '<div style="color:#666;font-size:13px;">กำลังโหลด...</div>';
 
   try {
-    const token = ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('');
-    const res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/contents/feedback.json', {
-      headers: { 'Authorization': 'token ' + token, 'Cache-Control': 'no-cache' }
-    });
+    const res = await fetch('https://raw.githubusercontent.com/' + GITHUB_REPO + '/main/feedback.json?t=' + Date.now(), { cache: 'no-store' });
     if (!res.ok) { container.innerHTML = '<div style="color:#666;">ยังไม่มี Feedback ครับ</div>'; return; }
-    const apiData = await res.json();
-    const fromB64 = s => { try { const b=atob(s.replace(/\n/g,'')); return decodeURIComponent(b.split('').map(c=>'%'+('0'+c.charCodeAt(0).toString(16)).slice(-2)).join('')); } catch(e){ return '[]'; } };
-    const data = JSON.parse(fromB64(apiData.content));
+    const data = await res.json();
     if (!data.length) { container.innerHTML = '<div style="color:#666;">ยังไม่มี Feedback ครับ</div>'; return; }
 
     // Summary
