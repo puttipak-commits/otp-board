@@ -837,6 +837,18 @@ async function loadData() {
     allData = DEMO_DATA;
     console.warn('Using demo data:', e.message);
   }
+  // เก็บแค่ OTP ล่าสุดของแต่ละระบบ โดยเลือกจาก received_at ล่าสุดเสมอ (ยกเว้น virtru_link)
+  const latestBySystem = {};
+  allData.forEach(item => {
+    if (item.virtru_link) return; // Eli Lilly แสดงทุก invoice — ไม่ dedup
+    const key = item.system_name;
+    if (!latestBySystem[key] || new Date(item.received_at) > new Date(latestBySystem[key].received_at)) {
+      latestBySystem[key] = item;
+    }
+  });
+  const virtruItems = allData.filter(item => item.virtru_link);
+  allData = [...Object.values(latestBySystem), ...virtruItems];
+
   // เรียง: Active OTP → Active Virtru → Expired Virtru → Expired OTP
   allData.sort((a, b) => {
     const aVirtruExp = a.virtru_link && a.valid_until && new Date(a.valid_until) < new Date() ? 1 : 0;
@@ -847,16 +859,6 @@ async function loadData() {
     const bScore = bVirtruExp * 2 + bOtpExp;
     if (aScore !== bScore) return aScore - bScore;
     return new Date(b.received_at) - new Date(a.received_at);
-  });
-
-  // เก็บแค่ OTP ล่าสุดของแต่ละระบบ (ยกเว้น no_dedup items)
-  const seen = new Set();
-  allData = allData.filter(item => {
-    if (item.virtru_link) return true; // Eli Lilly แสดงทุก invoice
-    const key = item.system_name;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
   });
 
   const now = new Date();
