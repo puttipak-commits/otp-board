@@ -1,5 +1,22 @@
 [
   {
+    "id": "28",
+    "from_email": "Remit_Advice@jpmchase.com",
+    "to_email": "Rutorn",
+    "subject": "Eli Lilly and Company Remittance Information - 10000026344704 - ELILILLYCO #secure#",
+    "received_at": "2026-02-22T15:43:35+00:00",
+    "otp_code": null,
+    "virtru_link": "https://jpmchase.secure.virtru.com/start/?c=experiment&t=emailtemplate2019-09&s=Remit_Advice%40jpmchase.com&p=06b5f51c-cb14-45b9-b90b-5aacc1716c39#v=3.0.0&d=https%3A%2F%2Fapi.virtru.com%2Fstorage%2Fapi%2Fpolicies%2F06b5f51c-cb14-45b9-b90b-5aacc1716c39%2Fdata%2Fmetadata&dk=Y86G4Xvajrm1Jl5JAJ5tYkDy6GS5cNbPWTtwIJl1zIQ%3D",
+    "valid_until": "2026-03-24T15:43:35+00:00",
+    "expiry_str": "ไม่ระบุ",
+    "expiry_minutes": null,
+    "expires_at": null,
+    "system_name": "Eli Lilly (Remittance)",
+    "system_url": "",
+    "color": "#e11d48",
+    "parsed_at": "2026-02-22T15:43:52.631898+00:00"
+  },
+  {
     "id": "27",
     "from_email": "CounselLink <no-reply@lexisnexis.com>",
     "to_email": "Rutorn",
@@ -14,7 +31,7 @@
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-02-22T15:42:52.574029+00:00"
+    "parsed_at": "2026-02-22T15:43:52.617895+00:00"
   },
   {
     "id": "26",
@@ -31,7 +48,7 @@
     "system_name": "ASCENT (DOE Legal)",
     "system_url": "http://ascent.doelegal.com",
     "color": "#1a56db",
-    "parsed_at": "2026-02-22T15:42:52.566657+00:00"
+    "parsed_at": "2026-02-22T15:43:52.609336+00:00"
   },
   {
     "id": "25",
@@ -48,7 +65,7 @@
     "system_name": "CounselGO",
     "system_url": "https://counselgo.com",
     "color": "#0e7490",
-    "parsed_at": "2026-02-22T15:42:52.548044+00:00"
+    "parsed_at": "2026-02-22T15:43:52.590905+00:00"
   },
   {
     "id": "24",
@@ -65,7 +82,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-02-22T15:42:52.540877+00:00"
+    "parsed_at": "2026-02-22T15:43:52.582779+00:00"
   },
   {
     "id": "23",
@@ -82,7 +99,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-02-22T15:42:52.533807+00:00"
+    "parsed_at": "2026-02-22T15:43:52.574388+00:00"
   },
   {
     "id": "22",
@@ -99,7 +116,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-22T15:42:52.527733+00:00"
+    "parsed_at": "2026-02-22T15:43:52.567372+00:00"
   },
   {
     "id": "21",
@@ -116,7 +133,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-22T15:42:52.520512+00:00"
+    "parsed_at": "2026-02-22T15:43:52.559388+00:00"
   },
   {
     "id": "20",
@@ -133,7 +150,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-22T15:42:52.513676+00:00"
+    "parsed_at": "2026-02-22T15:43:52.551273+00:00"
   },
   {
     "id": "19",
@@ -150,7 +167,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-22T15:42:52.506635+00:00"
+    "parsed_at": "2026-02-22T15:43:52.543272+00:00"
   },
   {
     "id": "18",
@@ -167,7 +184,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-22T15:42:52.499299+00:00"
+    "parsed_at": "2026-02-22T15:43:52.535033+00:00"
   },
   {
     "id": "17",
@@ -184,7 +201,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-22T15:42:52.491634+00:00"
+    "parsed_at": "2026-02-22T15:43:52.526839+00:00"
   },
   {
     "id": "14",
@@ -201,7 +218,7 @@
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-02-22T15:42:52.471961+00:00"
+    "parsed_at": "2026-02-22T15:43:52.503881+00:00"
   },
   {
     "id": "4",
@@ -218,7 +235,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-22T15:42:52.371083+00:00"
+    "parsed_at": "2026-02-22T15:43:52.383019+00:00"
   },
   {
     "id": "3",
@@ -235,7 +252,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-02-22T15:42:52.363942+00:00"
+    "parsed_at": "2026-02-22T15:43:52.374784+00:00"
   },
   {
     "id": "13",
@@ -252,7 +269,7 @@
     "system_name": "ASCENT (DOE Legal)",
     "system_url": "http://ascent.doelegal.com",
     "color": "#1a56db",
-    "parsed_at": "2026-02-22T15:42:52.464615+00:00"
+    "parsed_at": "2026-02-22T15:43:52.495413+00:00"
   },
   {
     "id": "12",
@@ -269,7 +286,7 @@
     "system_name": "ASCENT (DOE Legal)",
     "system_url": "http://ascent.doelegal.com",
     "color": "#1a56db",
-    "parsed_at": "2026-02-22T15:42:52.449955+00:00"
+    "parsed_at": "2026-02-22T15:43:52.475469+00:00"
   },
   {
     "id": "16",
@@ -286,7 +303,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-02-22T15:42:52.484652+00:00"
+    "parsed_at": "2026-02-22T15:43:52.518686+00:00"
   },
   {
     "id": "11",
@@ -303,7 +320,7 @@
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-02-22T15:42:52.433099+00:00"
+    "parsed_at": "2026-02-22T15:43:52.454656+00:00"
   },
   {
     "id": "10",
@@ -320,7 +337,7 @@
     "system_name": "Brightflag",
     "system_url": "https://brightflag.com",
     "color": "#059669",
-    "parsed_at": "2026-02-22T15:42:52.425553+00:00"
+    "parsed_at": "2026-02-22T15:43:52.446325+00:00"
   },
   {
     "id": "15",
@@ -337,7 +354,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-02-22T15:42:52.478335+00:00"
+    "parsed_at": "2026-02-22T15:43:52.511549+00:00"
   },
   {
     "id": "2",
@@ -354,7 +371,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-02-22T15:42:52.356326+00:00"
+    "parsed_at": "2026-02-22T15:43:52.366409+00:00"
   },
   {
     "id": "1",
@@ -371,7 +388,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-02-22T15:42:52.350548+00:00"
+    "parsed_at": "2026-02-22T15:43:52.359701+00:00"
   },
   {
     "id": "9",
@@ -388,7 +405,7 @@
     "system_name": "Eli Lilly (Remittance)",
     "system_url": "",
     "color": "#e11d48",
-    "parsed_at": "2026-02-22T15:42:52.418253+00:00"
+    "parsed_at": "2026-02-22T15:43:52.438240+00:00"
   },
   {
     "id": "8",
@@ -405,7 +422,7 @@
     "system_name": "Brightflag",
     "system_url": "https://brightflag.com",
     "color": "#059669",
-    "parsed_at": "2026-02-22T15:42:52.406018+00:00"
+    "parsed_at": "2026-02-22T15:43:52.424113+00:00"
   },
   {
     "id": "7",
@@ -422,7 +439,7 @@
     "system_name": "Eli Lilly (Remittance)",
     "system_url": "",
     "color": "#e11d48",
-    "parsed_at": "2026-02-22T15:42:52.398586+00:00"
+    "parsed_at": "2026-02-22T15:43:52.415380+00:00"
   },
   {
     "id": "6",
@@ -439,7 +456,7 @@
     "system_name": "CounselGO",
     "system_url": "https://counselgo.com",
     "color": "#0e7490",
-    "parsed_at": "2026-02-22T15:42:52.382545+00:00"
+    "parsed_at": "2026-02-22T15:43:52.396169+00:00"
   },
   {
     "id": "5",
@@ -456,6 +473,6 @@
     "system_name": "CounselGO",
     "system_url": "https://counselgo.com",
     "color": "#0e7490",
-    "parsed_at": "2026-02-22T15:42:52.376926+00:00"
+    "parsed_at": "2026-02-22T15:43:52.389885+00:00"
   }
 ]
