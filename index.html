@@ -473,6 +473,7 @@
       <span class="refresh-label" id="refresh-label">LIVE</span>
     </div>
     <div class="page-header-right">
+      <button class="fb-btn" onclick="openHelp()" style="background:#0D7D4D;">❓ Help</button>
       <button class="fb-btn" onclick="openFeedback()"><span class="star-blink">⭐</span>แจ้งปัญหา</button>
       <button class="fb-btn" onclick="openFeedbackView()" style="background:#1B3A6B;">📊 Feedback</button>
     </div>
@@ -508,8 +509,8 @@
   </div>
 
   <div class="filters">
-    <button class="filter-btn active" onclick="setFilter('all', this)">ทั้งหมด</button>
-    <button class="filter-btn" onclick="setFilter('active', this)">ใช้งานได้</button>
+    <button class="filter-btn" onclick="setFilter('all', this)">ทั้งหมด</button>
+    <button class="filter-btn active" onclick="setFilter('active', this)">ใช้งานได้</button>
     <button class="filter-btn" onclick="setFilter('expired', this)">หมดอายุ</button>
     <input class="search-input" id="search-input" placeholder="ค้นหา system / email..." oninput="renderCards()">
   </div>
@@ -541,7 +542,7 @@ const REFRESH_INTERVAL_MS = 30000; // โหลดใหม่ทุก 30 ว�
 // ==============================================
 
 let allData = [];
-let currentFilter = 'all';
+let currentFilter = 'active';
 
 // ---- Demo data (ใช้เมื่อโหลด JSON ไม่ได้) ----
 const DEMO_DATA = [
@@ -900,6 +901,15 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// ===== HELP FUNCTIONS =====
+function openHelp() {
+  document.getElementById('help-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeHelp() {
+  document.getElementById('help-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
 // ===== FEEDBACK FUNCTIONS =====
 const GITHUB_REPO = 'puttipak-commits/otp-board';
 
@@ -1042,6 +1052,149 @@ async function openFeedbackView() {
 }
 
 </script>
+
+<!-- ===== HELP MODAL ===== -->
+<div id="help-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:flex-start;justify-content:center;overflow-y:auto;padding:24px 16px;">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:680px;box-shadow:0 20px 60px rgba(0,0,0,0.3);margin:auto;">
+    <!-- Header -->
+    <div style="background:#0D7D4D;color:#fff;padding:20px 24px;border-radius:16px 16px 0 0;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;">❓ คู่มือการใช้งาน — OTP Bulletin Board</div>
+        <div style="font-size:11px;opacity:0.8;margin-top:2px;">DSB · OTP BULLETIN BOARD GUIDE</div>
+      </div>
+      <button onclick="closeHelp()" style="background:rgba(255,255,255,0.2);border:none;color:#fff;font-size:18px;cursor:pointer;border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;">✕</button>
+    </div>
+    <!-- Content -->
+    <div style="padding:24px;font-family:'Sarabun',sans-serif;">
+
+      <!-- Section 1 -->
+      <div style="margin-bottom:24px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <div style="background:#0D7D4D;color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0;">1</div>
+          <div style="font-size:15px;font-weight:700;color:#1B3A6B;">ระบบที่เชื่อมต่อกับ OTP Bulletin Board</div>
+        </div>
+        <div style="background:#F0F3FA;border-radius:10px;padding:16px;font-size:13px;line-height:1.8;">
+          <p style="color:#6B7A9A;font-size:11px;font-family:'IBM Plex Mono',monospace;margin-bottom:10px;font-weight:600;">ระบบที่นำ OTP เข้าแสดงอัตโนมัติ</p>
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="font-size:11px;font-weight:700;color:#6B7A9A;border-bottom:1px solid #D8DEEC;">
+                <th style="text-align:left;padding:6px 8px;">#</th>
+                <th style="text-align:left;padding:6px 8px;">ระบบ</th>
+                <th style="text-align:left;padding:6px 8px;">จากอีเมล</th>
+                <th style="text-align:left;padding:6px 8px;">ส่งถึง</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">1</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Anaqua (IBM)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">thinkip@us.ibm.com</td><td style="padding:7px 8px;font-size:12px;">Apiwatt / Suphattra</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">2</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">ASCENT (DOE Legal)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">ascentsupport@doelegal.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">3</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Billing Point (Onit)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">no-reply@onit.com</td><td style="padding:7px 8px;font-size:12px;">Suphattra</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">4</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Brightflag</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">invoices@brightflag.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">5</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">CounselGO</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">donotreply@mail.counselgo.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">6</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">CounselLink (LexisNexis)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">no-reply@lexisnexis.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">7</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Nestlé Invoice Management</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">hqimtsc.noreply@nestle.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="background:#FEF6E4;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#C07800;">—</td><td style="padding:7px 8px;font-size:13px;font-weight:600;color:#C07800;">Eli Lilly (Remittance)</td><td colspan="2" style="padding:7px 8px;font-size:12px;color:#C07800;font-style:italic;">⚠️ ยังอยู่ระหว่างพิจารณา (ไม่ใช่ OTP)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div style="margin-bottom:24px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <div style="background:#0D7D4D;color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0;">2</div>
+          <div style="font-size:15px;font-weight:700;color:#1B3A6B;">วิธีใช้งาน OTP Bulletin Board</div>
+        </div>
+        <div style="display:grid;gap:10px;">
+          <div style="background:#E6F7EF;border:1px solid #A3DFC0;border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;">
+            <span style="font-size:20px;flex-shrink:0;">⏱</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#0D7D4D;margin-bottom:3px;">รหัส OTP ปรากฏในระบบภายใน 1–3 นาที</div>
+              <div style="font-size:12px;color:#1a2340;line-height:1.6;">นับจากที่อีเมลถูกส่งมาถึง ระบบจะดึงรหัส OTP มาแสดงโดยอัตโนมัติ ภายใต้เงื่อนไขที่อีเมล, อินเทอร์เน็ต และ Browser ทำงานปกติ</div>
+            </div>
+          </div>
+          <div style="background:#EEF1F8;border:1px solid #D8DEEC;border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;">
+            <span style="font-size:20px;flex-shrink:0;">🖱</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#1B3A6B;margin-bottom:3px;">คัดลอกรหัส OTP</div>
+              <div style="font-size:12px;color:#1a2340;line-height:1.6;">คลิกที่ตัวเลข OTP หรือกดปุ่ม <span style="background:#1B3A6B;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;">COPY</span> เพื่อคัดลอกรหัสไปใช้งานได้ทันที</div>
+            </div>
+          </div>
+          <div style="background:#EEF1F8;border:1px solid #D8DEEC;border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;">
+            <span style="font-size:20px;flex-shrink:0;">🔄</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#1B3A6B;margin-bottom:3px;">หน้าเว็บอัปเดตอัตโนมัติทุก 30 วินาที</div>
+              <div style="font-size:12px;color:#1a2340;line-height:1.6;">สังเกตได้จากสถานะ <span style="background:#E6F7EF;color:#0D7D4D;font-size:10px;padding:1px 8px;border-radius:4px;font-weight:700;">LIVE</span> ด้านบน — ไม่จำเป็นต้อง Refresh เองทุกครั้ง</div>
+            </div>
+          </div>
+          <div style="background:#FEF6E4;border:1px solid #ffe082;border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;">
+            <span style="font-size:20px;flex-shrink:0;">🔁</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#C07800;margin-bottom:3px;">เมื่อหน้าเว็บค้างหรือผิดปกติ</div>
+              <div style="font-size:12px;color:#1a2340;line-height:1.6;">
+                กด <span style="background:#1a2340;color:#fff;font-size:10px;padding:1px 8px;border-radius:4px;font-family:'IBM Plex Mono',monospace;">F5</span> เพื่อโหลดใหม่ หรือกด <span style="background:#1a2340;color:#fff;font-size:10px;padding:1px 8px;border-radius:4px;font-family:'IBM Plex Mono',monospace;">Ctrl + Shift + R</span> เพื่อ Hard Refresh (ล้าง Cache) ซึ่งจะช่วยแก้ปัญหาได้ในส่วนใหญ่
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div style="margin-bottom:24px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <div style="background:#0D7D4D;color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0;">3</div>
+          <div style="font-size:15px;font-weight:700;color:#1B3A6B;">ความหมายของสถานะ Card</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;">
+          <div style="background:#E6F7EF;border:1.5px solid #A3DFC0;border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#0D7D4D;margin-bottom:4px;">ACTIVE</div>
+            <div style="font-size:11px;color:#1a2340;line-height:1.5;">รหัสใช้งานได้ มีอายุเหลือเพียงพอ</div>
+          </div>
+          <div style="background:#FEF6E4;border:1.5px solid #ffd700;border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#C07800;margin-bottom:4px;">URGENT</div>
+            <div style="font-size:11px;color:#1a2340;line-height:1.5;">ใกล้หมดอายุ ควรรีบใช้งานด่วน</div>
+          </div>
+          <div style="background:#FDEEEC;border:1.5px solid #F5B7B1;border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#C0392B;margin-bottom:4px;">EXPIRED</div>
+            <div style="font-size:11px;color:#1a2340;line-height:1.5;">หมดอายุแล้ว ต้องขอ OTP ใหม่</div>
+          </div>
+          <div style="background:#EEF1F8;border:1.5px solid #D8DEEC;border-radius:8px;padding:10px 12px;text-align:center;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#6B7A9A;margin-bottom:4px;">NO CODE</div>
+            <div style="font-size:11px;color:#1a2340;line-height:1.5;">ไม่พบรหัส OTP ในอีเมลนั้น</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div style="margin-bottom:24px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <div style="background:#0D7D4D;color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0;">4</div>
+          <div style="font-size:15px;font-weight:700;color:#1B3A6B;">หากไม่พบ OTP หรือพบปัญหา</div>
+        </div>
+        <div style="background:#EEF1F8;border-radius:10px;padding:14px 16px;font-size:13px;line-height:1.8;color:#1a2340;">
+          <ol style="padding-left:18px;margin:0;">
+            <li style="margin-bottom:6px;">ตรวจสอบว่าขอ OTP จากระบบต้นทางเรียบร้อยแล้ว</li>
+            <li style="margin-bottom:6px;">รอประมาณ <strong>1–3 นาที</strong> แล้วกด <span style="background:#1a2340;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;">F5</span> หรือ <span style="background:#1a2340;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;">Ctrl+Shift+R</span></li>
+            <li style="margin-bottom:6px;">หากยังไม่ปรากฏหลังจาก 5 นาที กรุณาแจ้ง <strong>แผนก IT</strong> ผ่านปุ่ม <span style="background:#1B3A6B;color:#fff;font-size:10px;padding:1px 6px;border-radius:4px;">⭐ แจ้งปัญหา</span></li>
+            <li>ในกรณีเร่งด่วน สามารถตรวจสอบอีเมลต้นทางโดยตรงได้</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Footer note -->
+      <div style="background:#F0F3FA;border-radius:8px;padding:12px 14px;display:flex;gap:10px;align-items:center;">
+        <span style="font-size:18px;">💡</span>
+        <div style="font-size:12px;color:#6B7A9A;line-height:1.6;">
+          ระบบนี้พัฒนาโดยแผนก IT ของ DS&amp;B สำหรับการใช้งานภายในองค์กรเท่านั้น — หากมีข้อเสนอแนะหรือพบปัญหาเพิ่มเติม กรุณาแจ้ง IT Department ครับ
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:20px;">
+        <button onclick="closeHelp()" style="background:#0D7D4D;color:#fff;border:none;padding:11px 36px;border-radius:10px;font-family:'Sarabun',sans-serif;font-size:14px;font-weight:600;cursor:pointer;">ปิด</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- ===== FEEDBACK MODAL ===== -->
 <div id="fb-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center;">
