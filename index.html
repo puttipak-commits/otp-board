@@ -93,11 +93,16 @@
   }
 
   @media (max-width: 480px) {
-    .header-title h1 { font-size: 12px; letter-spacing: 1px; }
+    .header-title h1 { font-size: 12px; letter-spacing: 1px; white-space: nowrap; }
     .header-title p { font-size: 9px; letter-spacing: 0.5px; max-width: 180px; }
     .filter-btn { font-size: 11px; padding: 5px 10px; white-space: nowrap; }
-    .header-title h1 { flex-wrap: nowrap; white-space: nowrap; }
     #marquee-beta { width: 65% !important; }
+    .stats-bar { gap: 12px; padding: 12px 12px; overflow-x: auto; }
+    .stat-num { font-size: 18px; }
+    .stat-time .time { font-size: 14px; }
+    .stat-time .time-label { font-size: 9px; }
+    .search-input { width: 100%; margin-left: 0; margin-top: 8px; }
+    .filters { flex-wrap: wrap; }
   }
 
   /* MAIN */
