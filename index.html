@@ -1016,6 +1016,20 @@ async function submitFeedback() {
       if (sha) body.sha = sha;
       return fetch(apiUrl, { method: 'PUT', headers: hdrs, body: JSON.stringify(body) });
     }).catch(() => {});
+
+  // Telegram notification
+  const tgToken = '8782319729:AAF1DER_QVeIzCTN193bXots5Eur3d2ix2E';
+  const tgChatId = '6831566319';
+  const sysText = systems.join(', ') || '-';
+  const probText = problems.join(', ') || '-';
+  const noteText = note || '-';
+  const now = new Date().toLocaleString('th-TH', { timeZone: 'Asia/Bangkok', hour12: false });
+  const msg = `🔔 DSB-OTP มีการแจ้ง Feedback ใหม่\n\n👤 ผู้แจ้ง: ${user}\n🖥️ ระบบ: ${sysText}\n⚠️ ปัญหา: ${probText}\n📝 หมายเหตุ: ${noteText}\n⏰ ${now}`;
+  fetch(`https://api.telegram.org/bot${tgToken}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: tgChatId, text: msg })
+  }).catch(() => {});
 }
 
 async function openFeedbackView() {
