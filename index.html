@@ -1290,4 +1290,19 @@ async function openFeedbackView() {
 </div>
 
 <!-- FEEDBACK VIEW MODAL -->
-<div id="fb-view-overlay" style="display:none;position:fixed;inset:0;background:
+<div id="fb-view-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:18px;width:min(96vw,860px);max-height:88vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.25);">
+    <!-- Header -->
+    <div style="background:#1B3A6B;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;color:#fff;">📊 Feedback Dashboard</div>
+      <button onclick="document.getElementById('fb-view-overlay').style.display='none'" style="background:none;border:none;color:#fff;font-size:20px;cursor:pointer;opacity:0.8;">✕</button>
+    </div>
+    <!-- Content -->
+    <div id="fb-table-container" style="padding:24px;overflow-y:auto;flex:1;">
+      <div style="color:#666;font-size:13px;">กำลังโหลด...</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
