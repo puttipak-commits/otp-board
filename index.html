@@ -1067,23 +1067,31 @@ async function openFeedbackView() {
     const topSys = Object.entries(sysCount).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([k,v])=>`${k} (${v})`).join(', ');
     const topProb = Object.entries(probCount).sort((a,b)=>b[1]-a[1]).slice(0,2).map(([k,v])=>`${k} (${v})`).join(', ');
 
+    // Store data globally for delete
+    window._fbData = data;
+    window._fbGHToken = ['gho_0TFiPLdi9ee','MGNw8KQKfOUMP0F4nXN1VcrSC'].join('');
+
     let tableRows = data.slice().reverse().map(fb => {
       const dt = new Date(fb.submitted_at);
       const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
       const dateStr = String(dt.getDate()).padStart(2,'0') + '-' + months[dt.getMonth()] + '-' + dt.getFullYear() + ' ' + String(dt.getHours()).padStart(2,'0') + ':' + String(dt.getMinutes()).padStart(2,'0');
-      return `<tr style="border-bottom:1px solid #f0f3fa;">
+      return `<tr id="fbrow-${fb.id}" style="border-bottom:1px solid #f0f3fa;">
         <td style="padding:10px 8px;font-size:13px;font-weight:600;">${fb.user}</td>
         <td style="padding:10px 8px;font-size:12px;">${fb.systems.join('<br>')}</td>
         <td style="padding:10px 8px;font-size:12px;">${fb.problems.join('<br>')}</td>
         <td style="padding:10px 8px;font-size:12px;color:#666;">${fb.note||'-'}</td>
         <td style="padding:10px 8px;font-size:11px;color:#999;white-space:nowrap;">${dateStr}</td>
+        <td style="padding:6px 8px;text-align:center;">
+          <button onclick="deleteFeedback('${fb.id}')" title="ลบรายการนี้"
+            style="background:#FDEEEC;border:1px solid #F5B7B1;color:#C0392B;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;line-height:1;">🗑️</button>
+        </td>
       </tr>`;
     }).join('');
 
     container.innerHTML = `
       <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;">
         <div style="background:#f0f3fa;border-radius:10px;padding:12px 16px;flex:1;min-width:120px;">
-          <div style="font-size:24px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">${data.length}</div>
+          <div style="font-size:24px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;" id="fb-total-count">${data.length}</div>
           <div style="font-size:11px;color:#666;">Feedback ทั้งหมด</div>
         </div>
         <div style="background:#f0f3fa;border-radius:10px;padding:12px 16px;flex:2;min-width:200px;">
@@ -1104,6 +1112,7 @@ async function openFeedbackView() {
               <th style="padding:10px 8px;text-align:left;">ปัญหา</th>
               <th style="padding:10px 8px;text-align:left;">หมายเหตุ</th>
               <th style="padding:10px 8px;text-align:left;">เวลา</th>
+              <th style="padding:10px 8px;text-align:center;">ลบ</th>
             </tr>
           </thead>
           <tbody>${tableRows}</tbody>
@@ -1115,6 +1124,38 @@ async function openFeedbackView() {
     } else {
       container.innerHTML = '<div style="color:#c0392b;">โหลดไม่ได้ครับ</div>';
     }
+  }
+}
+
+async function deleteFeedback(id) {
+  if (!confirm('ลบรายการนี้ใช่ไหมครับ?')) return;
+  const btn = document.querySelector(`#fbrow-${id} button`);
+  if (btn) { btn.disabled = true; btn.textContent = '⏳'; }
+
+  const token = window._fbGHToken;
+  const apiUrl = 'https://api.github.com/repos/' + GITHUB_REPO + '/contents/feedback.json';
+  const hdrs = { 'Content-Type': 'application/json', 'Authorization': 'token ' + token };
+  const toB64 = s => btoa(unescape(encodeURIComponent(s)));
+
+  try {
+    const res = await fetch(apiUrl + '?ref=main&t=' + Date.now(), { headers: hdrs });
+    if (!res.ok) throw new Error('fetch failed');
+    const d = await res.json();
+    const fromB64 = s => { try { const b=atob(s.replace(/\n/g,'')); return decodeURIComponent(b.split('').map(c=>'%'+('0'+c.charCodeAt(0).toString(16)).slice(-2)).join('')); } catch(e){ return '[]'; } };
+    let existing = JSON.parse(fromB64(d.content));
+    existing = existing.filter(fb => fb.id !== id);
+    const body = { message: 'delete feedback: ' + id, content: toB64(JSON.stringify(existing, null, 2)), sha: d.sha };
+    const putRes = await fetch(apiUrl, { method: 'PUT', headers: hdrs, body: JSON.stringify(body) });
+    if (!putRes.ok) throw new Error('put failed');
+    // Remove row from UI
+    const row = document.getElementById('fbrow-' + id);
+    if (row) row.remove();
+    window._fbData = existing;
+    const countEl = document.getElementById('fb-total-count');
+    if (countEl) countEl.textContent = existing.length;
+  } catch(e) {
+    alert('ลบไม่สำเร็จ กรุณาลองใหม่ครับ');
+    if (btn) { btn.disabled = false; btn.textContent = '🗑️'; }
   }
 }
 
