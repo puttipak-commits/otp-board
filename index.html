@@ -612,6 +612,34 @@ const DEMO_DATA = [
     system_url: "",
     color: "#6b7280",
   },
+  {
+    id: "demo4",
+    from_email: "\"Global Exchange Group\"<info@ias.corpay.com>",
+    to_email: "rutorn@dsb.co.th",
+    subject: "Corpay Authentication Code",
+    received_at: new Date(Date.now() - 10 * 60000).toISOString(),
+    otp_code: "5BD94055",
+    expiry_str: "30 days",
+    expiry_minutes: 43200,
+    expires_at: new Date(Date.now() + 43190 * 60000).toISOString(),
+    system_name: "Corpay (Global Vendor Invoice)",
+    system_url: "https://ias.corpay.com",
+    color: "#2563EB",
+  },
+  {
+    id: "demo5",
+    from_email: "west.onepass@thomsonreuters.com",
+    to_email: "rutorn@dsb.co.th",
+    subject: "OnePass Security Code",
+    received_at: new Date(Date.now() - 3 * 60000).toISOString(),
+    otp_code: "476810",
+    expiry_str: "15 minutes",
+    expiry_minutes: 15,
+    expires_at: new Date(Date.now() + 12 * 60000).toISOString(),
+    system_name: "OnePass (Thomson Reuters)",
+    system_url: "https://onepass.thomsonreuters.com",
+    color: "#DC2626",
+  },
 ];
 
 // ---- Helpers ----
@@ -1105,13 +1133,15 @@ async function openFeedbackView() {
               <th style="text-align:left;padding:6px 8px;">ส่งถึง</th>
             </tr></thead>
             <tbody>
-              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">1</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Anaqua (IBM)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">thinkip@us.ibm.com</td><td style="padding:7px 8px;font-size:12px;">Apiwatt / Suphattra</td></tr>
-              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">2</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">ASCENT (DOE Legal)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">ascentsupport@doelegal.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
-              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">3</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Billing Point (Onit)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">no-reply@onit.com</td><td style="padding:7px 8px;font-size:12px;">Suphattra</td></tr>
-              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">4</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Brightflag</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">invoices@brightflag.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
-              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">5</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">CounselGO</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">donotreply@mail.counselgo.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
-              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">6</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">CounselLink (LexisNexis)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">no-reply@lexisnexis.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
-              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">7</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Nestlé Invoice Management</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">hqimtsc.noreply@nestle.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">1</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Anaqua (IBM)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e0a16171015170e3e0b0d50171c13501d1113">[email&#160;protected]</a></td><td style="padding:7px 8px;font-size:12px;">Apiwatt / Suphattra</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">2</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">ASCENT (DOE Legal)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bbdac8d8ded5cfc8cecbcbd4c9cffbdfd4ded7dedcdad795d8d4d6">[email&#160;protected]</a></td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">3</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Billing Point (Onit)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b151456091e0b17023b1415120f55181416">[email&#160;protected]</a></td><td style="padding:7px 8px;font-size:12px;">Suphattra</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">4</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Brightflag</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b62657d6462686e784b6979626c637f6d676a6c25686466">[email&#160;protected]</a></td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">5</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">CounselGO</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="74101b1a1b00061104180d3419151d185a171b011a071118131b5a171b19">[email&#160;protected]</a></td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">6</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">CounselLink (LexisNexis)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cca2a3e1bea9bca0b58ca0a9b4a5bfa2a9b4a5bfe2afa3a1">[email&#160;protected]</a></td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">7</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Nestlé Invoice Management</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="92fae3fbffe6e1f1bcfcfde0f7e2feebd2fcf7e1e6fef7bcf1fdff">[email&#160;protected]</a></td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">8</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Corpay (Global Vendor Invoice)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">info@ias.corpay.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">9</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">OnePass (Thomson Reuters)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">west.onepass@thomsonreuters.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
               <tr style="background:#FEF6E4;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#C07800;">—</td><td style="padding:7px 8px;font-size:13px;font-weight:600;color:#C07800;">Eli Lilly (Remittance)</td><td colspan="2" style="padding:7px 8px;font-size:12px;color:#C07800;font-style:italic;">⚠️ ยังอยู่ระหว่างพิจารณา (ไม่ใช่ OTP)</td></tr>
             </tbody>
           </table>
@@ -1226,6 +1256,8 @@ async function openFeedbackView() {
 <label class="fb-check"><input type="checkbox" name="sys" value="Anaqua (IBM)"><span>Anaqua (IBM)</span></label>
 <label class="fb-check"><input type="checkbox" name="sys" value="Brightflag"><span>Brightflag</span></label>
 <label class="fb-check"><input type="checkbox" name="sys" value="Nestlé Invoice Management"><span>Nestlé Invoice Management</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="Corpay (Global Vendor Invoice)"><span>Corpay (Global Vendor Invoice)</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="OnePass (Thomson Reuters)"><span>OnePass (Thomson Reuters)</span></label>
 <label class="fb-check"><input type="checkbox" name="sys" value="Eli Lilly (Remittance)"><span>Eli Lilly (Remittance)</span></label></div>
       </div>
       <div style="margin-bottom:16px;">
@@ -1258,16 +1290,4 @@ async function openFeedbackView() {
 </div>
 
 <!-- FEEDBACK VIEW MODAL -->
-<div id="fb-view-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;align-items:center;justify-content:center;">
-  <div style="background:#fff;border-radius:16px;width:95%;max-width:700px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
-    <div style="background:#1B3A6B;color:#fff;padding:20px 24px;border-radius:16px 16px 0 0;display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;">📊 Feedback ทั้งหมด</div>
-      <button onclick="document.getElementById('fb-view-overlay').style.display='none'" style="background:none;border:none;color:#fff;font-size:20px;cursor:pointer;">✕</button>
-    </div>
-    <div style="padding:20px;" id="fb-table-container">
-      <div style="font-size:13px;color:#666;">กำลังโหลด...</div>
-    </div>
-  </div>
-</div>
-</body>
-</html>
+<div id="fb-view-overlay" style="display:none;position:fixed;inset:0;background:
