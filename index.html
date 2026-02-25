@@ -652,7 +652,7 @@ const DEMO_DATA = [
   {
     id: "demo6",
     from_email: "DoNotReply@qualcomm.com",
-    to_email: "prabjote@dsb.co.th",
+    to_email: "Prabjote@dsb.co.th",
     subject: "One-time verification code",
     received_at: new Date(Date.now() - 2 * 60000).toISOString(),
     otp_code: "789892",
@@ -817,7 +817,7 @@ function buildCard(item) {
       <div class="card-footer">
         <div class="meta-item">
           <div class="meta-label">ส่งถึง</div>
-          <div class="meta-value" title="${toClean}">${({'rutorn':'Rutorn','suphattra':'Suphattra','nopakun':'Rutorn','apiwatt':'Apiwatt','chakrapat':'Chakrapat'}[toClean.split('@')[0].toLowerCase()] || toClean.split('@')[0])}</div>
+          <div class="meta-value" title="${toClean}">${({'rutorn':'Rutorn','suphattra':'Suphattra','nopakun':'Rutorn','apiwatt':'Apiwatt','chakrapat':'Chakrapat','prabjote':'Prabjote'}[toClean.split('@')[0].toLowerCase()] || toClean.split('@')[0])}</div>
         </div>
         <div class="meta-item">
           <div class="meta-label">รับเมื่อ</div>
@@ -1143,11 +1143,16 @@ async function openFeedbackView() {
               <option value="">— ชื่อ —</option>
               <option value="Apiwatt">Apiwatt</option>
               <option value="Orrawan">Orrawan</option>
-              <option value="Rutorn">Rutorn</option>
+              <option value="Rutorn(Email)">Rutorn(Email)</option>
               <option value="Monrudee">Monrudee</option>
               <option value="Suphattra">Suphattra</option>
+              <option value="Trademarkinvoice">Trademarkinvoice</option>
+              <option value="Patent-DN">Patent-DN</option>
+              <option value="Sirinporn">Sirinporn</option>
+              <option value="Yuwadee">Yuwadee</option>
+              <option value="Pantipa">Pantipa</option>
+              <option value="Nipa">Nipa</option>
               <option value="IT-Dept">IT-Dept</option>
-              <option value="Domnern">Domnern</option>
             </select>
             <input id="fbreply-msg-${fb.id}" type="text" placeholder="พิมพ์ข้อความตอบกลับ..." style="flex:1;min-width:150px;padding:6px 10px;border:1px solid #dde3f0;border-radius:6px;font-size:12px;font-family:'Sarabun',sans-serif;"
               onkeydown="if(event.key==='Enter')submitReply('${fb.id}')">
