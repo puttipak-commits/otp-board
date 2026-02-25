@@ -649,6 +649,20 @@ const DEMO_DATA = [
     system_url: "https://onepass.thomsonreuters.com",
     color: "#DC2626",
   },
+  {
+    id: "demo6",
+    from_email: "DoNotReply@qualcomm.com",
+    to_email: "prabjote@dsb.co.th",
+    subject: "One-time verification code",
+    received_at: new Date(Date.now() - 2 * 60000).toISOString(),
+    otp_code: "789892",
+    expiry_str: "",
+    expiry_minutes: null,
+    expires_at: null,
+    system_name: "Qualcomm (Okta)",
+    system_url: "https://account.qualcomm.com",
+    color: "#c9162e",
+  },
 ];
 
 // ---- Helpers ----
@@ -1206,6 +1220,7 @@ async function deleteFeedback(id) {
               <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">7</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Nestlé Invoice Management</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">hqimtsc.noreply&#64;nestle.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn / Chakrapat</td></tr>
               <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">8</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Corpay (Global Vendor Invoice)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">info&#64;ias.corpay.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
               <tr style="border-bottom:1px solid #EEF1F8;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">9</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">OnePass (Thomson Reuters)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">west.onepass&#64;thomsonreuters.com</td><td style="padding:7px 8px;font-size:12px;">Rutorn</td></tr>
+              <tr style="border-bottom:1px solid #EEF1F8;background:#FAFBFE;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#6B7A9A;">10</td><td style="padding:7px 8px;font-size:13px;font-weight:600;">Qualcomm (Okta)</td><td style="padding:7px 8px;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#1B3A6B;">DoNotReply&#64;qualcomm.com</td><td style="padding:7px 8px;font-size:12px;">Prabjote</td></tr>
               <tr style="background:#FEF6E4;"><td style="padding:7px 8px;font-size:12px;font-weight:600;color:#C07800;">—</td><td style="padding:7px 8px;font-size:13px;font-weight:600;color:#C07800;">Eli Lilly (Remittance)</td><td colspan="2" style="padding:7px 8px;font-size:12px;color:#C07800;font-style:italic;">⚠️ ยังอยู่ระหว่างพิจารณา (ไม่ใช่ OTP)</td></tr>
             </tbody>
           </table>
@@ -1322,6 +1337,7 @@ async function deleteFeedback(id) {
 <label class="fb-check"><input type="checkbox" name="sys" value="Nestlé Invoice Management"><span>Nestlé Invoice Management</span></label>
 <label class="fb-check"><input type="checkbox" name="sys" value="Corpay (Global Vendor Invoice)"><span>Corpay (Global Vendor Invoice)</span></label>
 <label class="fb-check"><input type="checkbox" name="sys" value="OnePass (Thomson Reuters)"><span>OnePass (Thomson Reuters)</span></label>
+<label class="fb-check"><input type="checkbox" name="sys" value="Qualcomm (Okta)"><span>Qualcomm (Okta)</span></label>
 <label class="fb-check"><input type="checkbox" name="sys" value="Eli Lilly (Remittance)"><span>Eli Lilly (Remittance)</span></label></div>
       </div>
       <div style="margin-bottom:16px;">
