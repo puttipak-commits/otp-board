@@ -41,6 +41,45 @@
     font-size: 14px;
   }
 
+  /* Film Countdown Animations */
+  @keyframes filmCircleDraw {
+    0% { stroke-dashoffset: 62.83; }
+    60% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes filmCircleDraw2 {
+    0% { stroke-dashoffset: 44; }
+    40% { stroke-dashoffset: 44; }
+    80% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes filmCrosshairH {
+    0%, 50% { transform: scaleX(0); }
+    70% { transform: scaleX(1); }
+    100% { transform: scaleX(1); }
+  }
+  @keyframes filmCrosshairV {
+    0%, 50% { transform: scaleY(0); }
+    70% { transform: scaleY(1); }
+    100% { transform: scaleY(1); }
+  }
+  @keyframes filmDigitAppear {
+    0%, 65% { opacity: 0; transform: scale(2.5); filter: blur(4px); }
+    80% { opacity: 1; transform: scale(1); filter: blur(0); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
+  }
+  @keyframes filmSweep {
+    0% { transform: rotate(0deg); }
+    60% { transform: rotate(360deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .film-circle-outer { animation: filmCircleDraw 3s ease-out infinite; stroke-dasharray: 62.83; }
+  .film-circle-inner { animation: filmCircleDraw2 3s ease-out infinite; stroke-dasharray: 44; }
+  .film-cross-h { animation: filmCrosshairH 3s ease-out infinite; transform-origin: center; }
+  .film-cross-v { animation: filmCrosshairV 3s ease-out infinite; transform-origin: center; }
+  .film-digit { animation: filmDigitAppear 3s ease-out infinite; }
+  .film-sweep { animation: filmSweep 3s linear infinite; transform-origin: center; }
+
   body {
     font-family: 'Sarabun', sans-serif;
     background: var(--bg);
@@ -493,7 +532,7 @@
     <p>DOMNERN SOMGIAT &amp; BOONMA LAW OFFICE&thinsp;🏛️</p>
   </div>
   <div id="marquee-beta" style="margin-left:auto;width:50%;overflow:hidden;">
-    <marquee behavior="scroll" direction="left" scrollamount="3" style="color:#f5a623;font-size:10px;letter-spacing:0.5px;white-space:nowrap;">β1 Beta -- Testing -- &nbsp; กรุณา <span class="star-blink">📋</span> แจ้งปัญหา การใช้งาน เพื่อการปรับปรุงระบบให้ดียิ่งขึ้น ภายใน 25 มี.ค. 2026 ด้วยครับ ... ขอบคุณครับ &nbsp;🙏🙏 IT Department &nbsp;<span class="star-blink" style="font-size:15px;">🌟</span><span class="star-blink" style="font-size:12px;color:#f5a623;">⭐</span><span style="font-size:9px;color:#f5a623;">✦</span><span style="font-size:8px;color:#f5a623;">✦</span><span style="font-size:7px;color:#f5a623;">✦</span><span style="font-size:6px;color:#f5a623;">✦</span><span style="font-size:5px;color:#f5a623;">✦</span><span style="font-size:4px;color:#f5a623;">✦</span><span style="font-size:3px;color:#f5a623;">✦</span>&nbsp;&nbsp;<span id="countdown-badge" style="display:inline-flex;align-items:center;vertical-align:middle;background:#1a1409;border-radius:2px;height:28px;box-shadow:0 0 6px rgba(196,162,101,0.4);overflow:hidden;"><span style="display:flex;flex-direction:column;gap:1px;padding:1px 1.5px;align-items:center;"><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span></span><span style="position:relative;width:34px;height:24px;background:linear-gradient(160deg,#c9a96e 0%,#a0824a 50%,#c9a96e 100%);display:flex;align-items:center;justify-content:center;"><span style="position:absolute;top:50%;left:0;right:0;height:0.5px;background:rgba(0,0,0,0.25);"></span><span style="position:absolute;left:50%;top:0;bottom:0;width:0.5px;background:rgba(0,0,0,0.25);"></span><span style="position:absolute;width:20px;height:20px;border:1px solid rgba(0,0,0,0.18);border-radius:50%;"></span><span style="position:absolute;width:14px;height:14px;border:0.5px solid rgba(0,0,0,0.12);border-radius:50%;"></span><span id="countdown-days" style="position:relative;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:900;color:#1a1409;z-index:1;"></span></span><span style="display:flex;flex-direction:column;gap:1px;padding:1px 1.5px;align-items:center;"><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span></span></span><span style="font-family:'Special Elite',cursive;font-size:10px;color:#c4a265;vertical-align:middle;margin-left:5px;letter-spacing:0.5px;">Days Left</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="3" style="color:#f5a623;font-size:10px;letter-spacing:0.5px;white-space:nowrap;">β1 Beta -- Testing -- &nbsp; กรุณา <span class="star-blink">📋</span> แจ้งปัญหา การใช้งาน เพื่อการปรับปรุงระบบให้ดียิ่งขึ้น ภายใน 25 มี.ค. 2026 ด้วยครับ ... ขอบคุณครับ &nbsp;🙏🙏 IT Department &nbsp;<span class="star-blink" style="font-size:15px;">🌟</span><span class="star-blink" style="font-size:12px;color:#f5a623;">⭐</span><span style="font-size:9px;color:#f5a623;">✦</span><span style="font-size:8px;color:#f5a623;">✦</span><span style="font-size:7px;color:#f5a623;">✦</span><span style="font-size:6px;color:#f5a623;">✦</span><span style="font-size:5px;color:#f5a623;">✦</span><span style="font-size:4px;color:#f5a623;">✦</span><span style="font-size:3px;color:#f5a623;">✦</span>&nbsp;&nbsp;<span id="countdown-badge" style="display:inline-flex;align-items:center;vertical-align:middle;background:#1a1409;border-radius:2px;height:30px;box-shadow:0 0 8px rgba(196,162,101,0.5);overflow:hidden;"><span style="display:flex;flex-direction:column;gap:1px;padding:1px 1.5px;align-items:center;"><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span></span><span style="position:relative;width:38px;height:26px;background:linear-gradient(160deg,#c9a96e 0%,#a0824a 50%,#c9a96e 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;"><svg width="38" height="26" viewBox="0 0 38 26" style="position:absolute;inset:0;"><line x1="0" y1="13" x2="38" y2="13" stroke="rgba(0,0,0,0.2)" stroke-width="0.5" class="film-cross-h"/><line x1="19" y1="0" x2="19" y2="26" stroke="rgba(0,0,0,0.2)" stroke-width="0.5" class="film-cross-v"/><circle cx="19" cy="13" r="10" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1" class="film-circle-outer"/><circle cx="19" cy="13" r="7" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="0.5" class="film-circle-inner"/><line x1="19" y1="13" x2="19" y2="3" stroke="rgba(0,0,0,0.1)" stroke-width="0.5" class="film-sweep"/></svg><span id="countdown-days" class="film-digit" style="position:relative;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:900;color:#1a1409;z-index:1;letter-spacing:1px;"></span></span><span style="display:flex;flex-direction:column;gap:1px;padding:1px 1.5px;align-items:center;"><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span><span style="width:3px;height:2px;background:#c4a265;border-radius:0.5px;opacity:0.7;"></span></span></span><span style="font-family:'Special Elite',cursive;font-size:10px;color:#c4a265;vertical-align:middle;margin-left:5px;letter-spacing:0.5px;">Days Left</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</marquee>
   </div>
 </div>
 
