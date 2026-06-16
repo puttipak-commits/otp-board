@@ -1,5 +1,22 @@
 [
   {
+    "id": "546",
+    "from_email": "hqimtsc.noreply@nestle.com",
+    "to_email": "Rutorn",
+    "subject": " OTP Verification Nestlé Invoice Management Tool",
+    "received_at": "2026-06-16T02:43:21+00:00",
+    "otp_code": "110116",
+    "virtru_link": null,
+    "valid_until": null,
+    "expiry_str": "ไม่ระบุ",
+    "expiry_minutes": null,
+    "expires_at": null,
+    "system_name": "Nestlé Invoice Management",
+    "system_url": "https://nestle.com",
+    "color": "#c8102e",
+    "parsed_at": "2026-06-16T02:43:53.948900+00:00"
+  },
+  {
     "id": "545",
     "from_email": "west.onepass@thomsonreuters.com",
     "to_email": "Rutorn",
@@ -14,7 +31,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.812836+00:00"
+    "parsed_at": "2026-06-16T02:43:53.941817+00:00"
   },
   {
     "id": "544",
@@ -31,7 +48,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.807828+00:00"
+    "parsed_at": "2026-06-16T02:43:53.935196+00:00"
   },
   {
     "id": "543",
@@ -48,7 +65,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.801176+00:00"
+    "parsed_at": "2026-06-16T02:43:53.927724+00:00"
   },
   {
     "id": "542",
@@ -65,7 +82,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.795267+00:00"
+    "parsed_at": "2026-06-16T02:43:53.920023+00:00"
   },
   {
     "id": "541",
@@ -82,7 +99,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.776716+00:00"
+    "parsed_at": "2026-06-16T02:43:53.913235+00:00"
   },
   {
     "id": "540",
@@ -99,7 +116,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.770793+00:00"
+    "parsed_at": "2026-06-16T02:43:53.906640+00:00"
   },
   {
     "id": "539",
@@ -116,7 +133,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.764472+00:00"
+    "parsed_at": "2026-06-16T02:43:53.899404+00:00"
   },
   {
     "id": "538",
@@ -133,7 +150,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.758872+00:00"
+    "parsed_at": "2026-06-16T02:43:53.893216+00:00"
   },
   {
     "id": "537",
@@ -150,7 +167,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.752520+00:00"
+    "parsed_at": "2026-06-16T02:43:53.885850+00:00"
   },
   {
     "id": "536",
@@ -167,7 +184,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.746515+00:00"
+    "parsed_at": "2026-06-16T02:43:53.878370+00:00"
   },
   {
     "id": "535",
@@ -184,7 +201,7 @@
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-06-16T02:42:53.740399+00:00"
+    "parsed_at": "2026-06-16T02:43:53.871262+00:00"
   },
   {
     "id": "534",
@@ -201,7 +218,7 @@
     "system_name": "Corpay (Global Vendor Invoice)",
     "system_url": "https://ias.corpay.com",
     "color": "#2563EB",
-    "parsed_at": "2026-06-16T02:42:53.734188+00:00"
+    "parsed_at": "2026-06-16T02:43:53.863302+00:00"
   },
   {
     "id": "533",
@@ -218,7 +235,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.727416+00:00"
+    "parsed_at": "2026-06-16T02:43:53.854773+00:00"
   },
   {
     "id": "532",
@@ -235,7 +252,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.722032+00:00"
+    "parsed_at": "2026-06-16T02:43:53.848532+00:00"
   },
   {
     "id": "531",
@@ -252,7 +269,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.716117+00:00"
+    "parsed_at": "2026-06-16T02:43:53.841024+00:00"
   },
   {
     "id": "530",
@@ -269,7 +286,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-06-16T02:42:53.710474+00:00"
+    "parsed_at": "2026-06-16T02:43:53.834480+00:00"
   },
   {
     "id": "529",
@@ -286,7 +303,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.705383+00:00"
+    "parsed_at": "2026-06-16T02:43:53.828641+00:00"
   },
   {
     "id": "528",
@@ -303,7 +320,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.700094+00:00"
+    "parsed_at": "2026-06-16T02:43:53.821718+00:00"
   },
   {
     "id": "527",
@@ -320,7 +337,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.694558+00:00"
+    "parsed_at": "2026-06-16T02:43:53.815372+00:00"
   },
   {
     "id": "526",
@@ -337,7 +354,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.689135+00:00"
+    "parsed_at": "2026-06-16T02:43:53.808672+00:00"
   },
   {
     "id": "525",
@@ -354,7 +371,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.682934+00:00"
+    "parsed_at": "2026-06-16T02:43:53.801145+00:00"
   },
   {
     "id": "524",
@@ -371,7 +388,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.677798+00:00"
+    "parsed_at": "2026-06-16T02:43:53.794755+00:00"
   },
   {
     "id": "523",
@@ -388,7 +405,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.672072+00:00"
+    "parsed_at": "2026-06-16T02:43:53.788147+00:00"
   },
   {
     "id": "522",
@@ -405,7 +422,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.665687+00:00"
+    "parsed_at": "2026-06-16T02:43:53.781298+00:00"
   },
   {
     "id": "521",
@@ -422,7 +439,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.659228+00:00"
+    "parsed_at": "2026-06-16T02:43:53.773792+00:00"
   },
   {
     "id": "520",
@@ -439,7 +456,7 @@
     "system_name": "Corpay (Global Vendor Invoice)",
     "system_url": "https://ias.corpay.com",
     "color": "#2563EB",
-    "parsed_at": "2026-06-16T02:42:53.653623+00:00"
+    "parsed_at": "2026-06-16T02:43:53.766551+00:00"
   },
   {
     "id": "519",
@@ -456,7 +473,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.647541+00:00"
+    "parsed_at": "2026-06-16T02:43:53.759541+00:00"
   },
   {
     "id": "518",
@@ -473,7 +490,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.641317+00:00"
+    "parsed_at": "2026-06-16T02:43:53.752744+00:00"
   },
   {
     "id": "517",
@@ -490,7 +507,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.634928+00:00"
+    "parsed_at": "2026-06-16T02:43:53.745277+00:00"
   },
   {
     "id": "516",
@@ -507,7 +524,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.628850+00:00"
+    "parsed_at": "2026-06-16T02:43:53.737834+00:00"
   },
   {
     "id": "515",
@@ -524,7 +541,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.622869+00:00"
+    "parsed_at": "2026-06-16T02:43:53.730843+00:00"
   },
   {
     "id": "514",
@@ -541,7 +558,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.617224+00:00"
+    "parsed_at": "2026-06-16T02:43:53.723437+00:00"
   },
   {
     "id": "513",
@@ -558,7 +575,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.612001+00:00"
+    "parsed_at": "2026-06-16T02:43:53.716610+00:00"
   },
   {
     "id": "512",
@@ -575,7 +592,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.605815+00:00"
+    "parsed_at": "2026-06-16T02:43:53.709113+00:00"
   },
   {
     "id": "511",
@@ -592,7 +609,7 @@
     "system_name": "Corpay (Global Vendor Invoice)",
     "system_url": "https://ias.corpay.com",
     "color": "#2563EB",
-    "parsed_at": "2026-06-16T02:42:53.599909+00:00"
+    "parsed_at": "2026-06-16T02:43:53.701784+00:00"
   },
   {
     "id": "510",
@@ -609,7 +626,7 @@
     "system_name": "Corpay (Global Vendor Invoice)",
     "system_url": "https://ias.corpay.com",
     "color": "#2563EB",
-    "parsed_at": "2026-06-16T02:42:53.593819+00:00"
+    "parsed_at": "2026-06-16T02:43:53.694637+00:00"
   },
   {
     "id": "509",
@@ -626,7 +643,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.588189+00:00"
+    "parsed_at": "2026-06-16T02:43:53.686776+00:00"
   },
   {
     "id": "508",
@@ -643,7 +660,7 @@
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-06-16T02:42:53.582210+00:00"
+    "parsed_at": "2026-06-16T02:43:53.679638+00:00"
   },
   {
     "id": "507",
@@ -660,7 +677,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.575653+00:00"
+    "parsed_at": "2026-06-16T02:43:53.671846+00:00"
   },
   {
     "id": "506",
@@ -677,7 +694,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.569318+00:00"
+    "parsed_at": "2026-06-16T02:43:53.663971+00:00"
   },
   {
     "id": "505",
@@ -694,7 +711,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-06-16T02:42:53.563663+00:00"
+    "parsed_at": "2026-06-16T02:43:53.656817+00:00"
   },
   {
     "id": "504",
@@ -711,7 +728,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.559128+00:00"
+    "parsed_at": "2026-06-16T02:43:53.651301+00:00"
   },
   {
     "id": "503",
@@ -728,7 +745,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-06-16T02:42:53.554403+00:00"
+    "parsed_at": "2026-06-16T02:43:53.645276+00:00"
   },
   {
     "id": "502",
@@ -745,7 +762,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-06-16T02:42:53.549304+00:00"
+    "parsed_at": "2026-06-16T02:43:53.638418+00:00"
   },
   {
     "id": "501",
@@ -762,7 +779,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.543738+00:00"
+    "parsed_at": "2026-06-16T02:43:53.632272+00:00"
   },
   {
     "id": "500",
@@ -779,7 +796,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.537955+00:00"
+    "parsed_at": "2026-06-16T02:43:53.624697+00:00"
   },
   {
     "id": "499",
@@ -796,7 +813,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.531647+00:00"
+    "parsed_at": "2026-06-16T02:43:53.617043+00:00"
   },
   {
     "id": "498",
@@ -813,7 +830,7 @@
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-06-16T02:42:53.525248+00:00"
+    "parsed_at": "2026-06-16T02:43:53.609366+00:00"
   },
   {
     "id": "497",
@@ -830,7 +847,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.519342+00:00"
+    "parsed_at": "2026-06-16T02:43:53.601680+00:00"
   },
   {
     "id": "496",
@@ -847,7 +864,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.513693+00:00"
+    "parsed_at": "2026-06-16T02:43:53.594878+00:00"
   },
   {
     "id": "495",
@@ -864,7 +881,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.507611+00:00"
+    "parsed_at": "2026-06-16T02:43:53.588406+00:00"
   },
   {
     "id": "494",
@@ -881,7 +898,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-06-16T02:42:53.501952+00:00"
+    "parsed_at": "2026-06-16T02:43:53.581978+00:00"
   },
   {
     "id": "493",
@@ -898,7 +915,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.497888+00:00"
+    "parsed_at": "2026-06-16T02:43:53.575937+00:00"
   },
   {
     "id": "492",
@@ -915,7 +932,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.491589+00:00"
+    "parsed_at": "2026-06-16T02:43:53.568627+00:00"
   },
   {
     "id": "491",
@@ -932,7 +949,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.485480+00:00"
+    "parsed_at": "2026-06-16T02:43:53.560838+00:00"
   },
   {
     "id": "490",
@@ -949,7 +966,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.479169+00:00"
+    "parsed_at": "2026-06-16T02:43:53.553426+00:00"
   },
   {
     "id": "489",
@@ -966,7 +983,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.472772+00:00"
+    "parsed_at": "2026-06-16T02:43:53.545745+00:00"
   },
   {
     "id": "488",
@@ -983,7 +1000,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.466974+00:00"
+    "parsed_at": "2026-06-16T02:43:53.538154+00:00"
   },
   {
     "id": "487",
@@ -1000,7 +1017,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.460535+00:00"
+    "parsed_at": "2026-06-16T02:43:53.530547+00:00"
   },
   {
     "id": "486",
@@ -1017,7 +1034,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.454013+00:00"
+    "parsed_at": "2026-06-16T02:43:53.522798+00:00"
   },
   {
     "id": "485",
@@ -1034,7 +1051,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.446136+00:00"
+    "parsed_at": "2026-06-16T02:43:53.513540+00:00"
   },
   {
     "id": "484",
@@ -1051,7 +1068,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.440413+00:00"
+    "parsed_at": "2026-06-16T02:43:53.505806+00:00"
   },
   {
     "id": "483",
@@ -1068,7 +1085,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.434178+00:00"
+    "parsed_at": "2026-06-16T02:43:53.498665+00:00"
   },
   {
     "id": "482",
@@ -1085,7 +1102,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.428504+00:00"
+    "parsed_at": "2026-06-16T02:43:53.491057+00:00"
   },
   {
     "id": "481",
@@ -1102,7 +1119,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.423145+00:00"
+    "parsed_at": "2026-06-16T02:43:53.483678+00:00"
   },
   {
     "id": "480",
@@ -1119,7 +1136,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.417661+00:00"
+    "parsed_at": "2026-06-16T02:43:53.476135+00:00"
   },
   {
     "id": "479",
@@ -1136,7 +1153,7 @@
     "system_name": "CounselLink (LexisNexis)",
     "system_url": "https://counsellink.com",
     "color": "#d61f1f",
-    "parsed_at": "2026-06-16T02:42:53.411690+00:00"
+    "parsed_at": "2026-06-16T02:43:53.468807+00:00"
   },
   {
     "id": "478",
@@ -1153,7 +1170,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.405305+00:00"
+    "parsed_at": "2026-06-16T02:43:53.460697+00:00"
   },
   {
     "id": "477",
@@ -1170,7 +1187,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.398913+00:00"
+    "parsed_at": "2026-06-16T02:43:53.453054+00:00"
   },
   {
     "id": "476",
@@ -1187,7 +1204,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.393091+00:00"
+    "parsed_at": "2026-06-16T02:43:53.445777+00:00"
   },
   {
     "id": "475",
@@ -1204,7 +1221,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.387325+00:00"
+    "parsed_at": "2026-06-16T02:43:53.438334+00:00"
   },
   {
     "id": "474",
@@ -1221,7 +1238,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.381485+00:00"
+    "parsed_at": "2026-06-16T02:43:53.430697+00:00"
   },
   {
     "id": "473",
@@ -1238,7 +1255,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.375280+00:00"
+    "parsed_at": "2026-06-16T02:43:53.423766+00:00"
   },
   {
     "id": "472",
@@ -1255,7 +1272,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.368727+00:00"
+    "parsed_at": "2026-06-16T02:43:53.416354+00:00"
   },
   {
     "id": "471",
@@ -1272,7 +1289,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.362295+00:00"
+    "parsed_at": "2026-06-16T02:43:53.408741+00:00"
   },
   {
     "id": "470",
@@ -1289,7 +1306,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.356857+00:00"
+    "parsed_at": "2026-06-16T02:43:53.401212+00:00"
   },
   {
     "id": "469",
@@ -1306,7 +1323,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.351768+00:00"
+    "parsed_at": "2026-06-16T02:43:53.394312+00:00"
   },
   {
     "id": "468",
@@ -1323,7 +1340,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.346228+00:00"
+    "parsed_at": "2026-06-16T02:43:53.387553+00:00"
   },
   {
     "id": "467",
@@ -1340,7 +1357,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.340549+00:00"
+    "parsed_at": "2026-06-16T02:43:53.380632+00:00"
   },
   {
     "id": "466",
@@ -1357,7 +1374,7 @@
     "system_name": "OnePass (Thomson Reuters)",
     "system_url": "https://onepass.thomsonreuters.com",
     "color": "#DC2626",
-    "parsed_at": "2026-06-16T02:42:53.334234+00:00"
+    "parsed_at": "2026-06-16T02:43:53.373185+00:00"
   },
   {
     "id": "465",
@@ -1374,7 +1391,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.328785+00:00"
+    "parsed_at": "2026-06-16T02:43:53.366779+00:00"
   },
   {
     "id": "464",
@@ -1391,7 +1408,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.323151+00:00"
+    "parsed_at": "2026-06-16T02:43:53.359418+00:00"
   },
   {
     "id": "463",
@@ -1408,7 +1425,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-06-16T02:42:53.317166+00:00"
+    "parsed_at": "2026-06-16T02:43:53.352121+00:00"
   },
   {
     "id": "462",
@@ -1425,7 +1442,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.312392+00:00"
+    "parsed_at": "2026-06-16T02:43:53.346888+00:00"
   },
   {
     "id": "461",
@@ -1442,7 +1459,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-06-16T02:42:53.306440+00:00"
+    "parsed_at": "2026-06-16T02:43:53.339594+00:00"
   },
   {
     "id": "460",
@@ -1459,7 +1476,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-06-16T02:42:53.301641+00:00"
+    "parsed_at": "2026-06-16T02:43:53.333548+00:00"
   },
   {
     "id": "459",
@@ -1476,7 +1493,7 @@
     "system_name": "Anaqua (IBM)",
     "system_url": "https://anaqua.com",
     "color": "#1d4ed8",
-    "parsed_at": "2026-06-16T02:42:53.296879+00:00"
+    "parsed_at": "2026-06-16T02:43:53.327461+00:00"
   },
   {
     "id": "458",
@@ -1493,7 +1510,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.292732+00:00"
+    "parsed_at": "2026-06-16T02:43:53.322292+00:00"
   },
   {
     "id": "457",
@@ -1510,7 +1527,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.286409+00:00"
+    "parsed_at": "2026-06-16T02:43:53.314916+00:00"
   },
   {
     "id": "456",
@@ -1527,7 +1544,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.280084+00:00"
+    "parsed_at": "2026-06-16T02:43:53.307839+00:00"
   },
   {
     "id": "455",
@@ -1544,7 +1561,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-06-16T02:42:53.274208+00:00"
+    "parsed_at": "2026-06-16T02:43:53.301253+00:00"
   },
   {
     "id": "454",
@@ -1561,7 +1578,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.268711+00:00"
+    "parsed_at": "2026-06-16T02:43:53.294545+00:00"
   },
   {
     "id": "453",
@@ -1578,7 +1595,7 @@
     "system_name": "Qualcomm (Okta)",
     "system_url": "https://account.qualcomm.com",
     "color": "#3253DC",
-    "parsed_at": "2026-06-16T02:42:53.262704+00:00"
+    "parsed_at": "2026-06-16T02:43:53.287001+00:00"
   },
   {
     "id": "452",
@@ -1595,7 +1612,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-06-16T02:42:53.256655+00:00"
+    "parsed_at": "2026-06-16T02:43:53.280312+00:00"
   },
   {
     "id": "451",
@@ -1612,7 +1629,7 @@
     "system_name": "Nestlé Invoice Management",
     "system_url": "https://nestle.com",
     "color": "#c8102e",
-    "parsed_at": "2026-06-16T02:42:53.251397+00:00"
+    "parsed_at": "2026-06-16T02:43:53.274358+00:00"
   },
   {
     "id": "450",
@@ -1629,7 +1646,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.245981+00:00"
+    "parsed_at": "2026-06-16T02:43:53.267638+00:00"
   },
   {
     "id": "449",
@@ -1646,7 +1663,7 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.240015+00:00"
+    "parsed_at": "2026-06-16T02:43:53.260213+00:00"
   },
   {
     "id": "448",
@@ -1663,7 +1680,7 @@
     "system_name": "Billing Point (Onit)",
     "system_url": "https://billingpoint.onit.com",
     "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.233633+00:00"
+    "parsed_at": "2026-06-16T02:43:53.252456+00:00"
   },
   {
     "id": "447",
@@ -1680,23 +1697,6 @@
     "system_name": "Collaborati (Mitratech)",
     "system_url": "https://www.collaborati.net",
     "color": "#002453",
-    "parsed_at": "2026-06-16T02:42:53.227265+00:00"
-  },
-  {
-    "id": "446",
-    "from_email": "Billingpoint <no-reply@onit.com>",
-    "to_email": "Suphattra",
-    "subject": "Billing Point secure login code",
-    "received_at": "2026-05-20T02:43:44+00:00",
-    "otp_code": "535385",
-    "virtru_link": null,
-    "valid_until": null,
-    "expiry_str": "ไม่ระบุ",
-    "expiry_minutes": null,
-    "expires_at": null,
-    "system_name": "Billing Point (Onit)",
-    "system_url": "https://billingpoint.onit.com",
-    "color": "#7c3aed",
-    "parsed_at": "2026-06-16T02:42:53.220864+00:00"
+    "parsed_at": "2026-06-16T02:43:53.244845+00:00"
   }
 ]
